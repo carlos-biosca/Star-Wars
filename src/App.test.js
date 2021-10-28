@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { createMemoryHistory } from 'history'
+import { Router } from 'react-router-dom'
+import App from './App'
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+test('app navigating', () => {
+  const history = createMemoryHistory()
+  render(
+    <App>
+      <Router history={history} />
+    </App>
+  )
+  const homeView = screen.getByText(/home view/i)
+  expect(homeView).toBeInTheDocument()
+
+  const leftClick = { button: 0 }
+  userEvent.click(screen.getByText(/starships/i), leftClick)
+
+  const starshipsView = screen.getByRole('list', { name: /starships list/i })
+  expect(starshipsView).toBeInTheDocument()
+})
