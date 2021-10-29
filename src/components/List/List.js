@@ -1,20 +1,19 @@
 import './List.css'
 
-export default function List () {
+export default function List ({ starships }) {
   return (
-    <ul aria-label="starships list">
-      <li>
-        <h3>Corvette</h3>
-        <p>model 1234</p>
-      </li>
-      <li>
-        <h3>Destroyer</h3>
-        <p>model tgrtre</p>
-      </li>
-      <li>
-        <h3>Falcon</h3>
-        <p>model 12we2334</p>
-      </li>
+    <ul aria-label="starships list" className="list">
+      {
+        !starships ? (<h3>No List</h3>) :
+          (
+            starships.map((starship, index) => {
+              return <li key={index} className="list__item">
+                <h3>{starship.name}</h3>
+                <p>{starship.model}</p>
+              </li>
+            })
+          )
+      }
     </ul>
   )
 }
