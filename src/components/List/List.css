@@ -4,6 +4,6 @@
   cursor: pointer;
 }
 
-.list__item * {
+Link * {
   pointer-events: none;
 }
