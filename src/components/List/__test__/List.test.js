@@ -1,11 +1,18 @@
-import { render, screen, within } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import List from '../List'
 
-test('render 10 naves', async () => {
-  render(<List />)
-  const list = await screen.findByRole("list", { name: /starships list/i })
-  console.log(list);
-  // const { findAllByRole } = within(list)
-  // const items = await findAllByRole("listitem")
-  // expect(items.length).toBe(10)
+const mockedStarships = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+
+describe('starships list', () => {
+  test('render 1 element', () => {
+    render(<List starships={mockedStarships} />)
+    const listElement = screen.getByTestId('element-2')
+    expect(listElement).toBeInTheDocument()
+  })
+
+  test('render 10 elements', () => {
+    render(<List starships={mockedStarships} />)
+    const listElements = screen.getAllByTestId(/element/i)
+    expect(listElements.length).toBe(10)
+  })
 })
