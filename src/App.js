@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import './App.css';
@@ -7,23 +7,11 @@ import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import Home from './views/Home/Home';
 import Starships from './views/Starships/Starships'
-import Details from "./components/Details/Details";
+import Details from "./views/Details/Details";
 
 function App () {
   const [selectedStarship, setSelectedStarship] = useState()
   const [idStarship, setIdStarship] = useState()
-
-  // useEffect(async () => {
-  //   const starship = await sessionStorage.getItem('starship')
-  //   const id = await sessionStorage.getItem('id')
-  //   setSelectedStarship(starship)
-  //   setIdStarship(id)
-  // }, [])
-
-  useEffect(() => {
-    sessionStorage.setItem('starship', JSON.stringify(selectedStarship));
-    sessionStorage.setItem('id', JSON.stringify(idStarship));
-  }, [selectedStarship, idStarship]);
 
   return (
     <div className="App">

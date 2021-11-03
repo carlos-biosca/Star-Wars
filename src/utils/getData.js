@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const getData = async (url, set) => {
+const getData = async (url) => {
   const res = await axios.get(url)
   const result = await res.data
-  set(result)
+  return result
 }
 
 export default getData;

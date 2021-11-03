@@ -2,14 +2,21 @@ import { useState, useEffect } from 'react';
 
 import List from "../../components/List/List"
 
-import getData from '../../logic/getData';
+import axios from 'axios'
+import retrieveStarships from '../../logic/retrieve-starships'
 
 
 export default function Starships ({ changeStarship, changeId }) {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    getData('https://swapi.dev/api/starships/', setData)
+    const source = axios.CancelToken.source()
+    const getData = async () => setData(await retrieveStarships())
+    getData()
+
+    return () => {
+      source.cancel()
+    }
   }, [])
 
   return (
