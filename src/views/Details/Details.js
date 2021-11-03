@@ -6,11 +6,10 @@ export default function Details ({ info, id }) {
   const { name, model, manufacturer, cost_in_credits, length, max_atmosphering_speed, crew } = info
 
   const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
-  const onError = () => setImgSrc(defaultImage)
 
   return (
     <div>
-      <img src={imgSrc ? imgSrc : defaultImage} onError={onError} alt="" />
+      <img src={imgSrc ? imgSrc : defaultImage} onError={() => setImgSrc(defaultImage)} alt="" />
       <h3>{name}</h3>
       <p>Model: {model}</p>
       <p>Manufacturer: {manufacturer}</p>
