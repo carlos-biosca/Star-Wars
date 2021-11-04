@@ -11,8 +11,8 @@ import Details from "./views/Details/Details";
 import useSessionstorage from './hooks/useLocalstorage';
 
 function App () {
-  const [selectedStarship, setSelectedStarship] = useSessionstorage('starship', '')
-  const [idStarship, setIdStarship] = useSessionstorage('id', '')
+  const [selectedStarship, setSelectedStarship] = useSessionstorage('starship')
+  const [idStarship, setIdStarship] = useSessionstorage('id')
 
   return (
     <div className="App">

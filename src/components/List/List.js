@@ -9,7 +9,7 @@ export default function List ({ starships, changeStarship, changeId }) {
   const Select = (e) => {
     const { filterStarship, id } = useSelectStarship(e, starships)
     changeStarship(filterStarship)
-    changeId(id[0])
+    changeId(id)
   }
   return (
     <ul aria-label="starships list" className="list">

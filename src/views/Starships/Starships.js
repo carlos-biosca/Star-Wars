@@ -10,11 +10,17 @@ import { initialUrl } from '../../constants';
 
 
 export default function Starships ({ changeStarship, changeId }) {
-  const [data, setData] = useState([])
+  const [naus, setNaus] = useState()
+  const [page, setPage] = useState()
 
   useEffect(() => {
     const source = axios.CancelToken.source()
-    const getData = async () => setData(await retrieveStarships(initialUrl))
+
+    const getData = async () => {
+      const res = await retrieveStarships(initialUrl)
+      setNaus(res.results)
+      setPage(res.next)
+    }
     getData()
 
     return () => {
@@ -22,19 +28,18 @@ export default function Starships ({ changeStarship, changeId }) {
     }
   }, [])
 
-  const handleNextPage = async () => {
-    if (data.next) setData(await retrieveStarships(data.next))
-  }
-
-  const handlePreviousPage = async () => {
-    if (data.previous) setData(await retrieveStarships(data.previous))
+  const handleAddNaus = async () => {
+    if (page) {
+      const res = await retrieveStarships(page)
+      setNaus([...naus, ...res.results])
+      setPage(res.next)
+    }
   }
 
   return (
     <>
-      <List starships={data.results} changeStarship={changeStarship} changeId={changeId} />
-      <Button open={handlePreviousPage} text={'previous page'} />
-      <Button open={handleNextPage} text={'next page'} />
+      <List starships={naus} changeStarship={changeStarship} changeId={changeId} />
+      <Button open={handleAddNaus} text={'View More'} />
     </>
   )
 }
