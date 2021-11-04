@@ -1,5 +1,5 @@
 import getData from "../utils/getData"
 
-const retrieveStarships = async () => await getData('https://swapi.dev/api/starships/')
+const retrieveStarships = async (url) => await getData(url)
 
 export default retrieveStarships
