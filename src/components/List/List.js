@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom'
 
 import './List.css'
 
-import useSelectStarship from '../../hooks/useSelectStarship';
+import useFilterArray from '../../hooks/useFilterArray';
 
 
 export default function List ({ starships, changeStarship, changeId }) {
   const Select = (e) => {
-    const { filterStarship, id } = useSelectStarship(e, starships)
-    changeStarship(filterStarship)
-    changeId(id)
+    const { filteredItem } = useFilterArray(e, starships)
+    changeStarship(filteredItem)
+    changeId((filteredItem[0].url).match(/[0-9]+/)[0])
   }
   return (
     <ul aria-label="starships list" className="list">
