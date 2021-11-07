@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+}
+
+.form__input {
+  width: 200px;
+  height: 40px;
+  padding: 0 0 0 1em;
+  outline: none;
+  border: none;
+  border-radius: 5px 0px 0px 5px;
+  background-color: var(--grey-dark);
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.form__input:focus {
+  filter: brightness(120%);
+}
+
+.form__button {
+  height: 40px;
+  background-color: var(--grey-dark);
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form__button ion-icon {
+  color: var(--grey-color);
+  font-size: 26px;
+}
+
+.form__input:focus + .form__button {
+  filter: brightness(120%);
+}
+
+.button-group {
+  width: fit-content;
+  margin-top: 0.8em;
+  margin-left: auto;
+  color: var(--grey-dark);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.login__button,
+.signup__button {
+  background-color: #000;
+  color: var(--grey-color);
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  cursor: pointer;
+  transition: color 0.8s ease;
+}
+
+.login__button:hover,
+.signup__button:hover {
+  color: var(--white);
+}

@@ -1,5 +1,5 @@
 import './Button.css'
 
-export default function Button ({ open, text }) {
-  return <button aria-label={text} onClick={open}>{text.toUpperCase()}</button>
+export default function Button ({ open, text, name }) {
+  return <button aria-label={text} onClick={open} className={name}>{text.toUpperCase()}</button>
 }

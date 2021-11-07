@@ -4,7 +4,6 @@ import defaultImage from '../../assets/images/default.jpg'
 
 export default function Details ({ info, id }) {
   const { name, model, manufacturer, cost_in_credits, length, max_atmosphering_speed, crew } = info
-
   const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
 
   return (

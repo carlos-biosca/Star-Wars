@@ -1,12 +1,20 @@
+.container {
+  background-color: #000;
+  background-image: url("../../assets/images/pexels-aleksandar-pasaric-1694000.jpg");
+  background-size: cover;
+}
+
 .header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 200px;
-  background-color: #000;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px 10px;
+  max-width: 1400px;
+  height: 134px;
 }
 
 .header__logo {
-  width: 300px;
+  width: auto;
+  height: 100%;
 }

@@ -1,0 +1,44 @@
+.social {
+  display: flex;
+  align-items: center;
+}
+
+.social__links {
+  display: flex;
+  border-right: 1px solid var(--grey-color);
+}
+
+.social__icon {
+  margin: 5px 9px 0px;
+}
+
+.social__icon:last-child {
+  margin-right: 1.2em;
+}
+
+.social__icon ion-icon {
+  color: var(--grey-color);
+  font-size: 26px;
+  transition: color 0.8s ease;
+}
+
+.social__icon ion-icon:hover {
+  color: var(--white);
+}
+
+.social__kids {
+  width: 33px;
+  height: 17px;
+  background-color: var(--grey-color);
+  margin-left: 1.2em;
+  padding: 0 0.5em;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: background-color 0.8s ease;
+}
+
+.social__kids:hover {
+  background-color: var(--white);
+}

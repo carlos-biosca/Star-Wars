@@ -1,23 +1,17 @@
 import logo from '../../assets/images/logo.jpg'
 import './Header.css'
-import Button from '../Button/Button'
+import Social from '../Social/Social'
+import SearchForm from '../SearchForm/SearchForm'
 
 export default function Header () {
-  const handleOpenLogin = () => {
-    console.log('openLogin');
-  }
-
-  const handleOpenSignup = () => {
-    console.log('openSignup');
-  }
-
   return (
-    <header className="header">
-      <img src={logo} alt="Star Wars" className="header__logo" />
-      <div>
-        <Button open={handleOpenLogin} text={'log in'} />
-        <Button open={handleOpenSignup} text={'sign up'} />
-      </div>
-    </header>
+    <div className="container">
+      <header className="header">
+        <Social />
+        <img src={logo} alt="Star Wars" className="header__logo" />
+        <SearchForm />
+      </header>
+    </div>
+
   )
 }
