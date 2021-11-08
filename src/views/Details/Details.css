@@ -1,0 +1,8 @@
+.details {
+  width: 70%;
+  margin: 0 auto 3em;
+}
+
+.details__info {
+  background-color: #151515;
+}

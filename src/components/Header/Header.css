@@ -5,6 +5,7 @@
   background-color: #000;
   background-image: url("../../assets/images/pexels-aleksandar-pasaric-1694000.jpg");
   background-size: cover;
+  z-index: 1;
 }
 
 .header {

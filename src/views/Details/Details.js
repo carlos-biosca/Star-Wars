@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
+import './Details.css'
 import defaultImage from '../../assets/images/default.jpg'
+
 import Footer from '../../components/Footer/Footer'
 
 export default function Details ({ info, id }) {
@@ -9,15 +11,17 @@ export default function Details ({ info, id }) {
 
   return (
     <div>
-      <div>
+      <div className="details">
         <img src={imgSrc ? imgSrc : defaultImage} onError={() => setImgSrc(defaultImage)} alt="" />
-        <h3>{name}</h3>
-        <p>Model: {model}</p>
-        <p>Manufacturer: {manufacturer}</p>
-        <p>Cost in credits: {cost_in_credits}</p>
-        <p>Length: {length}</p>
-        <p>Atmospheric Speed: {max_atmosphering_speed}</p>
-        <p>Crew: {crew}</p>
+        <div className="details__info">
+          <h3>{name}</h3>
+          <p>Model: {model}</p>
+          <p>Manufacturer: {manufacturer}</p>
+          <p>Cost in credits: {cost_in_credits}</p>
+          <p>Length: {length}</p>
+          <p>Atmospheric Speed: {max_atmosphering_speed}</p>
+          <p>Crew: {crew}</p>
+        </div>
       </div>
       <Footer />
     </div>

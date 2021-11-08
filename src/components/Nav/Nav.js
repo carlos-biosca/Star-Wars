@@ -8,7 +8,6 @@ export default function Nav () {
     for (let link of links) {
       link.firstChild.classList.remove('active')
     }
-    console.log('hola')
     e.target.classList.add('active')
   }
 

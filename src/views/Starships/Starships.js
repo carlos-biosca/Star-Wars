@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 
+import './Starships.css'
+
 import List from "../../components/List/List"
 import Button from '../../components/Button/Button';
+import Footer from '../../components/Footer/Footer';
 
 import axios from 'axios'
 import retrieveStarships from '../../logic/retrieve-starships'
 
 import { initialUrl } from '../../constants';
-import Footer from '../../components/Footer/Footer';
 
 
 export default function Starships ({ changeStarship, changeId }) {
@@ -40,7 +42,7 @@ export default function Starships ({ changeStarship, changeId }) {
   return (
     <>
       <List starships={naus} changeStarship={changeStarship} changeId={changeId} />
-      <Button open={handleAddNaus} text={'View More'} />
+      <Button open={handleAddNaus} text={'View More'} name={'view__button'} />
       <Footer />
     </>
   )

@@ -4,6 +4,7 @@
   --grey-dark: #242424;
   --black: #000;
   --border-color: #333;
+  --gold-color: #dcae50;
 }
 
 * {
@@ -22,6 +23,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
   color: var(--white);
+}
+
+a {
+  color: var(--grey-color);
+  text-decoration: none;
 }
 
 code {

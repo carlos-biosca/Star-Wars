@@ -3,6 +3,7 @@
   top: 134px;
   width: 100%;
   background-color: var(--black);
+  z-index: 1;
 }
 
 .nav__links {
@@ -22,8 +23,6 @@
 }
 
 .nav__link a {
-  color: var(--grey-color);
-  text-decoration: none;
   font-weight: bold;
 }
 

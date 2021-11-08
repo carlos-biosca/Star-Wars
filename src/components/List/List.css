@@ -1,9 +1,26 @@
 .list__item {
+  width: 70%;
+  margin: 0 auto 1em;
+  padding: 1em;
   background-color: #151515;
   color: #fff;
   cursor: pointer;
+  text-align: left;
 }
 
-Link * {
+.list__item * {
+  margin: 0;
   pointer-events: none;
+}
+
+.list__item:hover {
+  filter: brightness(130%);
+}
+
+.list__item h3 {
+  margin-bottom: 0.5em;
+}
+
+.list__item:hover h3 {
+  color: var(--gold-color);
 }
