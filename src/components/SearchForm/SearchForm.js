@@ -18,6 +18,7 @@ export default function SearchForm () {
       </form>
       <div className="button-group">
         <Button open={handleOpenLogin} text={'log in'} name={'login__button'} />
+        {/* eslint-disable-next-line react/jsx-no-comment-textnodes*/}
         <span>//</span>
         <Button open={handleOpenSignup} text={'sign up'} name={'signup__button'} />
       </div>

@@ -16,6 +16,10 @@
   src: url("./fonts/star.woff") format("woff");
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   font-family: Stars, sans-serif;

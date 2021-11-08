@@ -13,7 +13,8 @@
 }
 
 .view__button:hover {
-  background-color: transparent;
+  color: var(--gold-color);
+  border-color: var(--gold-color);
 }
 
 @keyframes opacity {

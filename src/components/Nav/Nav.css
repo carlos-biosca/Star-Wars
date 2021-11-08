@@ -48,3 +48,7 @@
   opacity: 1;
   transition: opacity 0.5s linear;
 }
+
+.nav__link a:hover {
+  color: var(--white);
+}

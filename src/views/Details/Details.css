@@ -1,8 +1,45 @@
 .details {
-  width: 70%;
+  width: 60%;
   margin: 0 auto 3em;
+  text-align: left;
+  color: var(--grey-color);
+}
+
+.details img {
+  width: 100%;
+}
+
+.details__bar,
+.details__info {
+  position: relative;
+  top: -6px;
+}
+
+.details__bar {
+  background-color: var(--gold-color);
+  height: 2px;
 }
 
 .details__info {
-  background-color: #151515;
+  padding: 0 1em 1em;
+  background-color: var(--grey-dark);
+}
+
+.details__info h3 {
+  margin-top: 0;
+  padding-top: 1em;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.details__starship {
+  display: flex;
+}
+
+.details__starship div {
+  flex: 1;
+}
+
+.details__starship p {
+  margin: 1.5em 0;
 }
