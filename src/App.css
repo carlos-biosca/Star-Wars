@@ -7,3 +7,8 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+main {
+  margin-top: 220px;
+  background-image: url("./assets/images/pexels-aleksandar-pasaric-1694000.jpg");
+}

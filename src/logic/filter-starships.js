@@ -1,3 +1,3 @@
-const filterStarships = (e, arr) => arr.filter(item => item.name === e.target.firstChild.textContent)
+const filterStarships = (name, arr) => arr.filter(item => item.name === name)
 
 export default filterStarships

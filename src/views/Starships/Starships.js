@@ -7,6 +7,7 @@ import axios from 'axios'
 import retrieveStarships from '../../logic/retrieve-starships'
 
 import { initialUrl } from '../../constants';
+import Footer from '../../components/Footer/Footer';
 
 
 export default function Starships ({ changeStarship, changeId }) {
@@ -40,6 +41,7 @@ export default function Starships ({ changeStarship, changeId }) {
     <>
       <List starships={naus} changeStarship={changeStarship} changeId={changeId} />
       <Button open={handleAddNaus} text={'View More'} />
+      <Footer />
     </>
   )
 }

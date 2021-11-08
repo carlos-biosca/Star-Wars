@@ -19,17 +19,20 @@ function App () {
       <Header />
       <Router>
         <Nav />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/starships">
-            <Starships changeStarship={setSelectedStarship} changeId={setIdStarship} />
-          </Route>
-          <Route path="/starships/:id">
-            <Details info={selectedStarship} id={idStarship} />
-          </Route>
-        </Switch>
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/starships">
+              <Starships changeStarship={setSelectedStarship} changeId={setIdStarship} />
+            </Route>
+            <Route path="/starships/:id">
+              <Details info={selectedStarship} id={idStarship} />
+            </Route>
+          </Switch>
+        </main>
+
       </ Router>
     </div>
   );

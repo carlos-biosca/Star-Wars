@@ -3,6 +3,11 @@
   --grey-color: #7a7a7a;
   --grey-dark: #242424;
   --black: #000;
+  --border-color: #333;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @font-face {
