@@ -1,9 +1,10 @@
 import Footer from "../../components/Footer/Footer";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
 
 export default function Home () {
   return (
     <div>
-      <h2>Home View</h2>
+      <ImageSlider />
       <Footer />
     </div>
   )
