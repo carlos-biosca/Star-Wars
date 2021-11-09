@@ -9,8 +9,12 @@ ul {
 }
 
 main {
+  min-height: 1000px;
   margin: 190px auto 0;
   padding-top: 2em;
   background-image: url("./assets/images/pexels-aleksandar-pasaric-1694000.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position-x: center;
+  background-size: 85% auto;
 }

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import './Details.css'
 import defaultImage from '../../assets/images/default.jpg'
 
-import Footer from '../../components/Footer/Footer'
 
 export default function Details ({ info, id }) {
   const { name, model, manufacturer, cost_in_credits, length, max_atmosphering_speed, crew } = info
@@ -37,7 +36,6 @@ export default function Details ({ info, id }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
 
   )

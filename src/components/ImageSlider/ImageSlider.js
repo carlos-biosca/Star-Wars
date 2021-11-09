@@ -16,7 +16,7 @@ export default function ImageSlider () {
   }
 
   useEffect(() => {
-    const allImages = document.querySelectorAll('.slider__image')
+    const allImages = document.querySelectorAll('.slider__item')
     for (let img of allImages) {
       img.style.transform = `translateX(-${current}00%)`
     }
@@ -30,8 +30,13 @@ export default function ImageSlider () {
         {
           SliderData.map((slide, index) => {
             return (
-              <li key={index} className={`slider__image slider__image--${index}`}>
-                <img src={slide.image} alt='' />
+              <li key={index} className="slider__item">
+                <img src={slide.image} alt='' className={'slider__image'} />
+                <div className="slider__info">
+                  <h2>Visit the starships</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam sunt sed velit nobis! Magni quaerat, quo culpa repellendus nemo optio voluptate est incidunt provident. Magnam neque.</p>
+                  <button>More Details</button>
+                </div>
               </li>
             )
           })

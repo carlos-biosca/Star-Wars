@@ -9,6 +9,7 @@ import Starships from './views/Starships/Starships'
 import Details from "./views/Details/Details";
 
 import useSessionstorage from './hooks/useLocalstorage';
+import Footer from "./components/Footer/Footer";
 
 function App () {
   const [selectedStarship, setSelectedStarship] = useSessionstorage('starship')
@@ -32,7 +33,7 @@ function App () {
             </Route>
           </Switch>
         </main>
-
+        <Footer />
       </ Router>
     </div>
   );
