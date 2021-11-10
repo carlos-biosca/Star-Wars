@@ -4,6 +4,10 @@ import { SliderData } from "../../constants"
 
 import './ImageSlider.css'
 
+import { Link } from 'react-router-dom'
+import Preview from "../Preview/Preview"
+
+
 export default function ImageSlider () {
   const [current, setCurrent] = useState(0)
 
@@ -30,18 +34,19 @@ export default function ImageSlider () {
         {
           SliderData.map((slide, index) => {
             return (
-              <li key={index} className="slider__item">
+              <li key={index} className={`slider__item slider__item--${slide.theme}`}>
                 <img src={slide.image} alt='' className={'slider__image'} />
-                <div className="slider__info">
-                  <h2>Visit the starships</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam sunt sed velit nobis! Magni quaerat, quo culpa repellendus nemo optio voluptate est incidunt provident. Magnam neque.</p>
-                  <button>More Details</button>
+                <div className={`slider__info slider__info--${slide.color}`}>
+                  <h2>{slide.title}</h2>
+                  <p>{slide.text}</p>
+                  <Link to={slide.link}>{slide.button}</Link>
                 </div>
               </li>
             )
           })
         }
       </ul>
+      <Preview data={SliderData} changeSlide={setCurrent} current={current} />
     </section>
   )
 }

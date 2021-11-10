@@ -8,7 +8,9 @@ export default function Header () {
     <div className="container">
       <header className="header">
         <Social />
-        <img src={logo} alt="Star Wars" className="header__logo" />
+        <a href="/">
+          <img src={logo} alt="Star Wars" className="header__logo" />
+        </a>
         <SearchForm />
       </header>
     </div>

@@ -6,13 +6,31 @@ const initialUrl = 'https://swapi.dev/api/starships/'
 
 const SliderData = [
   {
-    image: slider1
+    image: slider1,
+    title: 'WHAT’S THE GREATEST SHIP DESIGN IN STAR WARS?',
+    text: 'Learn about the secrets of star wars ships.',
+    theme: 'light',
+    color: 'blue',
+    button: 'learn more',
+    link: '/starships'
   },
   {
-    image: slider2
+    image: slider2,
+    title: 'STAR WARS INSIDE INTEL: THE PILOTS',
+    text: 'Jump into the cockpit for a dogfight of words.',
+    theme: 'dark',
+    color: 'orange',
+    button: 'more details',
+    link: '#!'
   },
   {
-    image: slider3
+    image: slider3,
+    title: '9 HEROES OF STAR WARS',
+    text: 'We are all the Republic. Meet the actors behind-the-scenes.',
+    theme: 'dark',
+    color: 'gold',
+    button: 'read now',
+    link: '#!'
   }
 ]
 
