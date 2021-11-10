@@ -25,7 +25,7 @@ const SliderData = [
   },
   {
     image: slider3,
-    title: '9 HEROES OF STAR WARS',
+    title: 'HEROES OF STAR WARS',
     text: 'We are all the Republic. Meet the actors behind-the-scenes.',
     theme: 'dark',
     color: 'gold',

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 import { SliderData } from "../../constants"
 
@@ -10,14 +10,32 @@ import Preview from "../Preview/Preview"
 
 export default function ImageSlider () {
   const [current, setCurrent] = useState(0)
+  const intervalSlider = useRef(0)
+
+  const cardSlide = (slide) => {
+    setCurrent(slide)
+    clearInterval(intervalSlider.current)
+    intervalSlider.current = null
+  }
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? SliderData.length - 1 : current - 1)
+    setCurrent(current => current === 0 ? SliderData.length - 1 : current - 1)
+    clearInterval(intervalSlider.current)
+    intervalSlider.current = null
   }
 
   const nextSlide = () => {
-    setCurrent(current === SliderData.length - 1 ? 0 : current + 1)
+    setCurrent(current => current === SliderData.length - 1 ? 0 : current + 1)
+    clearInterval(intervalSlider.current)
+    intervalSlider.current = null
   }
+
+  useEffect(() => {
+    intervalSlider.current = setInterval(() => {
+      setCurrent(current => current === SliderData.length - 1 ? 0 : current + 1)
+    }, 6000)
+    return () => clearInterval(intervalSlider.current)
+  }, [])
 
   useEffect(() => {
     const allImages = document.querySelectorAll('.slider__item')
@@ -27,7 +45,7 @@ export default function ImageSlider () {
   }, [current])
 
   return (
-    <section className="slider">
+    <section className="slider" id='slider'>
       <button className="slider__button slider__button--left" onClick={prevSlide}><ion-icon name="chevron-back-outline"></ion-icon></button>
       <button className="slider__button slider__button--right" onClick={nextSlide}><ion-icon name="chevron-forward-outline"></ion-icon></button>
       <ul className="slider__container">
@@ -46,7 +64,7 @@ export default function ImageSlider () {
           })
         }
       </ul>
-      <Preview data={SliderData} changeSlide={setCurrent} current={current} />
+      <Preview data={SliderData} changeSlide={cardSlide} current={current} interval={intervalSlider.current} />
     </section>
   )
 }

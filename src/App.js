@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import './App.css';
@@ -8,12 +9,11 @@ import Home from './views/Home/Home';
 import Starships from './views/Starships/Starships'
 import Details from "./views/Details/Details";
 
-import useSessionstorage from './hooks/useLocalstorage';
 import Footer from "./components/Footer/Footer";
 
 function App () {
-  const [selectedStarship, setSelectedStarship] = useSessionstorage('starship')
-  const [idStarship, setIdStarship] = useSessionstorage('id')
+  const [selectedStarship, setSelectedStarship] = useState()
+  const [idStarship, setIdStarship] = useState()
 
   return (
     <div className="App">
