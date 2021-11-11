@@ -2,11 +2,7 @@ import './SearchForm.css'
 import Button from '../Button/Button'
 
 
-export default function SearchForm () {
-  const handleOpenLogin = () => {
-    console.log('openLogin');
-  }
-
+export default function SearchForm ({ openLoginModal }) {
   const handleOpenSignup = () => {
     console.log('openSignup');
   }
@@ -17,7 +13,7 @@ export default function SearchForm () {
         <button arial-label="search-icon" onClick={(e) => e.preventDefault()} className="form__button"><ion-icon name="search-outline"></ion-icon></button>
       </form>
       <div className="button-group">
-        <Button open={handleOpenLogin} text={'log in'} name={'login__button'} />
+        <Button open={() => openLoginModal(true)} text={'log in'} name={'login__button'} />
         {/* eslint-disable-next-line react/jsx-no-comment-textnodes*/}
         <span>//</span>
         <Button open={handleOpenSignup} text={'sign up'} name={'signup__button'} />

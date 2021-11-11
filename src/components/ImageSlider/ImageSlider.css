@@ -14,10 +14,7 @@
   font-size: 2rem;
   color: var(--white);
   background-color: rgba(32, 32, 32, 0.5);
-  border: none;
   border-radius: 2px;
-  outline: none;
-  cursor: pointer;
   user-select: none;
   transition: background-color 0.15s linear;
   z-index: 10;

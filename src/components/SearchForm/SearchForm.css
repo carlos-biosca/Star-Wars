@@ -21,10 +21,7 @@
 .form__button {
   height: 40px;
   background-color: var(--grey-dark);
-  border: none;
   border-radius: 0px 5px 5px 0px;
-  outline: none;
-  cursor: pointer;
 }
 
 .form__button ion-icon {

@@ -16,10 +16,6 @@ export default function Starships () {
   const [page, setPage] = useState()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
-  useEffect(() => {
     const getStarships = async () => {
       const res = await retrieveStarships()
       setStarshipsList(res.results)

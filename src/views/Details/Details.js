@@ -13,10 +13,6 @@ export default function Details () {
   const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
-  useEffect(() => {
     const getStarship = async () => setStarship(await getData(`https://swapi.dev/api/starships/${id}/`))
     getStarship()
   }, [id])
