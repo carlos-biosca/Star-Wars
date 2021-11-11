@@ -37,6 +37,7 @@
 }
 
 .details__starship div {
+  padding-right: 1em;
   flex: 1;
 }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-import { SliderData } from "../../constants"
+import { SliderData } from "../../data"
 
 import './ImageSlider.css'
 
