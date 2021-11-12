@@ -17,11 +17,13 @@ import ScrollToTop from "./utils/ScrollToTop";
 
 function App () {
   const [loginModal, setLoginModal] = useState(false)
+  const [registerModal, setRegisterModal] = useState(false)
 
   return (
     <div className="App">
-      {loginModal && <Modal closeModal={setLoginModal} />}
-      <Header openLoginModal={setLoginModal} />
+      {loginModal && <Modal closeModal={setLoginModal} openModal={setRegisterModal} title={'sign in'} />}
+      {registerModal && <Modal closeModal={setRegisterModal} openModal={setLoginModal} title={'create your account'} />}
+      <Header openLoginModal={setLoginModal} openRegisterModal={setRegisterModal} />
       <Router>
         <Nav />
         <main>

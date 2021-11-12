@@ -6,6 +6,7 @@ import './ImageSlider.css'
 
 import { Link } from 'react-router-dom'
 import Preview from "../Preview/Preview"
+import Button from "../Button/Button"
 
 
 export default function ImageSlider () {
@@ -46,8 +47,8 @@ export default function ImageSlider () {
 
   return (
     <section className="slider" id='slider'>
-      <button className="slider__button slider__button--left" onClick={prevSlide}><ion-icon name="chevron-back-outline"></ion-icon></button>
-      <button className="slider__button slider__button--right" onClick={nextSlide}><ion-icon name="chevron-forward-outline"></ion-icon></button>
+      <Button name={"slider__button slider__button--left"} open={prevSlide} text={<ion-icon name="chevron-back-outline"></ion-icon>} />
+      <Button name={"slider__button slider__button--right"} open={nextSlide} text={<ion-icon name="chevron-forward-outline"></ion-icon>} />
       <ul className="slider__container">
         {
           SliderData.map((slide, index) => {

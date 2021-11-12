@@ -15,31 +15,121 @@
   position: relative;
   max-width: 540px;
   width: 100%;
-  height: 500px;
+  padding-bottom: 40px;
   background-color: var(--background-modal);
 }
 
+.modal__logo {
+  margin: 30px 0 10px;
+}
+
 .modal__title {
+  margin: 0 0 12px;
   color: var(--yellow-modal);
   font-size: 1.656rem;
   text-transform: uppercase;
-  margin-bottom: 12px;
   font-weight: normal;
 }
 
-.modal__form-button {
-  width: 100%;
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  color: var(--grey-color);
+}
+
+.modal__list {
+  height: 60px;
+  text-align: left;
+  color: var(--yellow-modal);
+  list-style: initial;
+  padding-left: 1em;
+  font-size: 0.8rem;
+}
+
+.modal__show {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.modal__checkbox {
+  margin: 0 0.5em 0 0;
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+  z-index: 10;
+}
+
+.modal__checkbox + label {
+  padding-top: 5px;
+}
+
+.modal__submit,
+.modal__account {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.modal__submit {
   background-color: var(--grey-modal);
+  color: var(--white);
   transition: background-color 0.3s ease;
 }
 
-.modal__form-button:hover {
+.modal__submit:hover {
   background-color: var(--blue-modal);
+}
+
+.modal__help {
+  margin: 5px 0 30px;
+  text-align: right;
+}
+
+.modal__help a {
+  color: var(--yellow-modal);
+}
+
+.modal__help a:hover {
+  text-decoration: underline;
+}
+
+.modal__account {
+  background-color: transparent;
+  color: var(--yellow-modal);
+}
+
+.modal__account:hover {
+  border: 1px solid var(--yellow-modal);
+}
+
+.modal__footer a {
+  color: var(--yellow-modal);
+}
+
+.modal__footer a:hover {
+  text-decoration: underline;
 }
 
 .modal__close {
   position: absolute;
   top: 20px;
   right: 20px;
+  height: 38px;
+  width: 38px;
+  background-color: transparent;
+  color: var(--white);
+  opacity: 0.2;
   z-index: 1;
+}
+
+.modal__close ion-icon {
+  font-size: 2.5rem;
+}
+
+.modal__close:hover {
+  opacity: 1;
 }

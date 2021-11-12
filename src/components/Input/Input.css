@@ -1,0 +1,29 @@
+.modal__input {
+  height: 40px;
+  margin-bottom: 4%;
+  padding: 0 15px;
+  line-height: 40px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+.modal__input:focus {
+  background-color: var(--grey-modal);
+  color: var(--yellow-modal);
+  border: 1px solid var(--yellow-modal);
+  caret-color: var(--yellow-modal);
+}
+
+.modal__input:focus::placeholder {
+  color: var(--white);
+}
+
+.modal__input--expand {
+  width: 100%;
+}
+
+/* .modal__input--expand:focus + ul {
+  height: 60px;
+  opacity: 1;
+} */

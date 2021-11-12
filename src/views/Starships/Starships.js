@@ -38,7 +38,7 @@ export default function Starships () {
         starshipList && (
           <>
             <List starships={starshipList} />
-            <Button open={handleAddNaus} text={'View More'} name={'view__button'} />
+            <Button open={handleAddNaus} text={'VIEW MORE'} name={'view__button'} />
           </>
         )
       }
