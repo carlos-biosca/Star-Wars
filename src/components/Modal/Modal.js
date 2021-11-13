@@ -7,7 +7,12 @@ import ModalLogo from '../../assets/images/modal-logo.png'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 
+import useValidation from '../../hooks/useValidation'
+
+import validateInputs from '../../logic/validate-inputs'
+
 export default function Modal ({ closeModal, openModal, title }) {
+  const { handleBlur, errors } = useValidation(validateInputs)
   const [selectAria, setSelectAria] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 
@@ -30,22 +35,25 @@ export default function Modal ({ closeModal, openModal, title }) {
               </>
             ) : (
               <>
-                <Input type={'text'} id={'firstname'} text={'First Name'} />
-                <Input type={'text'} id={'lastname'} text={'Last Name'} />
-                <Input type={'email'} id={'email'} text={'Email Address'} />
-                <Input type={'text'} id={'displayname'} text={'Display Name'} />
+                <Input type={'text'} id={'firstname'} text={'First Name'} validation={handleBlur} error={errors.firstname} />
+                <Input type={'text'} id={'lastname'} text={'Last Name'} validation={handleBlur} error={errors.lastname} />
+                <Input type={'email'} id={'email'} text={'Email Address'} validation={handleBlur} error={errors.email} />
+                <Input type={'text'} id={'displayname'} text={'Display Name'} validation={handleBlur} error={errors.displayname} />
+
                 <div>
-                  <input type={showPassword ? 'text' : 'password'} name="password" id="password" className="modal__input modal__input--expand" placeholder="Password" onSelect={() => setSelectAria(true)} />
+                  <input type={showPassword ? 'text' : 'password'} name="password" id="password" maxLength="60" className={!errors.password ? "modal__input modal__input--expand" : 'modal__input modal__input--expand modal__input--error'} placeholder="Password" onSelect={() => setSelectAria(true)} onBlur={handleBlur} />
+                  <p className="modal__errors">{errors.password}</p>
                   <ul className={selectAria ? "modal__list modal__list--show" : "modal__list"}>
-                    <li>Enter at least 6 characters.</li>
+                    <li className={errors.password === 'The password is too short.' ? 'modal__condition--error' : ''}>Enter at least 6 characters.</li>
                     <li>Don't use the password from another account.</li>
-                    <li>Use letters together with spaces, numbers, or symbols (!@#$%^&amp;*).</li>
+                    <li className={errors.password === 'The password is too easily guessed.' ? 'modal__condition--error' : ''}>Use letters together with numbers.</li>
                   </ul>
                   <div className="modal__show">
                     <input type="checkbox" name="show" id="show" className="modal__checkbox" onClick={() => setShowPassword(!showPassword)} />
                     <label htmlFor="show">Show password</label>
                   </div>
                 </div>
+
                 <Button name={"modal__submit"} text={'Create Account'} />
                 <p className="modal__footer">Already have an account? <a href="#!" onClick={() => { closeModal(false); openModal(true); }}>Sign In</a></p>
               </>

@@ -55,6 +55,10 @@
   opacity: 1;
 }
 
+.modal__condition--error {
+  color: var(--red-modal);
+}
+
 .modal__show {
   position: relative;
   display: flex;
