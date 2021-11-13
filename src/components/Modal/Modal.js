@@ -8,7 +8,8 @@ import Input from '../Input/Input'
 import Button from '../Button/Button'
 
 export default function Modal ({ closeModal, openModal, title }) {
-  const [selectAria, setSelectAria] = useState()
+  const [selectAria, setSelectAria] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   return (
     <div className="modal">
@@ -34,18 +35,14 @@ export default function Modal ({ closeModal, openModal, title }) {
                 <Input type={'email'} id={'email'} text={'Email Address'} />
                 <Input type={'text'} id={'displayname'} text={'Display Name'} />
                 <div>
-                  <input type="password" name="password" id="password" className="modal__input modal__input--expand" placeholder="Password" onSelect={() => setSelectAria(true)} />
-                  {
-                    selectAria && (
-                      <ul className="modal__list">
-                        <li>Enter at least 6 characters.</li>
-                        <li>Don't use the password from another account.</li>
-                        <li>Use letters together with spaces, numbers, or symbols (!@#$%^&amp;*).</li>
-                      </ul>
-                    )
-                  }
+                  <input type={showPassword ? 'text' : 'password'} name="password" id="password" className="modal__input modal__input--expand" placeholder="Password" onSelect={() => setSelectAria(true)} />
+                  <ul className={selectAria ? "modal__list modal__list--show" : "modal__list"}>
+                    <li>Enter at least 6 characters.</li>
+                    <li>Don't use the password from another account.</li>
+                    <li>Use letters together with spaces, numbers, or symbols (!@#$%^&amp;*).</li>
+                  </ul>
                   <div className="modal__show">
-                    <input type="checkbox" name="show" id="show" className="modal__checkbox" />
+                    <input type="checkbox" name="show" id="show" className="modal__checkbox" onClick={() => setShowPassword(!showPassword)} />
                     <label htmlFor="show">Show password</label>
                   </div>
                 </div>

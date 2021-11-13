@@ -22,8 +22,3 @@
 .modal__input--expand {
   width: 100%;
 }
-
-/* .modal__input--expand:focus + ul {
-  height: 60px;
-  opacity: 1;
-} */
