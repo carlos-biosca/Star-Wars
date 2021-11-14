@@ -1,0 +1,14 @@
+.success__container {
+  height: 550px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/images/pexels-aleksandar-pasaric-1694000.jpg");
+  background-size: cover;
+}
+
+.success__title {
+  color: var(--yellow-modal);
+  text-align: center;
+}

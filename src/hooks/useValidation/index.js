@@ -23,6 +23,8 @@ const useValidation = (validateInputs, validateForm, setIsValid) => {
   useEffect(() => {
     if (Object.values(errors).every(error => error === '') && submit) {
       setIsValid(true)
+    } else {
+      setSubmit(false)
     }
   }, [errors, setIsValid, submit])
 

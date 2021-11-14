@@ -39,91 +39,18 @@
   color: var(--grey-color);
 }
 
-.modal__list {
-  height: 0px;
-  text-align: left;
-  color: var(--yellow-modal);
-  list-style: initial;
-  padding-left: 1.2em;
-  font-size: 0.8rem;
-  opacity: 0;
-  transition: height 0.35s;
-}
-
-.modal__list--show {
-  height: 60px;
-  opacity: 1;
-}
-
-.modal__condition--error {
-  color: var(--red-modal);
-}
-
-.modal__show {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-bottom: 1em;
-  background-color: var(--background-modal);
-}
-
-.modal__checkbox {
-  margin: 0 0.5em 0 0;
-  position: relative;
-  width: 1.4rem;
-  height: 1.4rem;
-}
-
-.modal__checkbox + label {
-  padding-top: 5px;
-}
-
-.modal__submit,
-.modal__account {
+.form__submit,
+.form__account {
   height: 40px;
   padding: 0 18px;
   border-radius: 3px;
   font-size: 1rem;
 }
 
-.modal__submit {
+.form__submit {
   background-color: var(--grey-modal);
   color: var(--white);
   transition: background-color 0.3s ease;
-}
-
-.modal__submit:hover {
-  background-color: var(--blue-modal);
-}
-
-.modal__help {
-  margin: 5px 0 30px;
-  text-align: right;
-}
-
-.modal__help a {
-  color: var(--yellow-modal);
-}
-
-.modal__help a:hover {
-  text-decoration: underline;
-}
-
-.modal__account {
-  background-color: transparent;
-  color: var(--yellow-modal);
-}
-
-.modal__account:hover {
-  border: 1px solid var(--yellow-modal);
-}
-
-.modal__footer a {
-  color: var(--yellow-modal);
-}
-
-.modal__footer a:hover {
-  text-decoration: underline;
 }
 
 .modal__close {

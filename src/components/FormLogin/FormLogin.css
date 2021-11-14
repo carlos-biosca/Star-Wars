@@ -1,0 +1,21 @@
+.form__help {
+  margin: 5px 0 30px;
+  text-align: right;
+}
+
+.form__help a {
+  color: var(--yellow-modal);
+}
+
+.form__help a:hover {
+  text-decoration: underline;
+}
+
+.form__account {
+  background-color: transparent;
+  color: var(--yellow-modal);
+}
+
+.form__account:hover {
+  border: 1px solid var(--yellow-modal);
+}

@@ -21,8 +21,8 @@ function App () {
 
   return (
     <div className="App">
-      {loginModal && <Modal closeModal={() => setLoginModal(false)} openModal={() => setRegisterModal(true)} title={'sign in'} />}
-      {registerModal && <Modal closeModal={() => setRegisterModal(false)} openModal={() => setLoginModal(true)} title={'create your account'} />}
+      {loginModal && <Modal closeModal={setLoginModal} openModal={setRegisterModal} title={'sign in'} />}
+      {registerModal && <Modal closeModal={setRegisterModal} openModal={setLoginModal} title={'create your account'} />}
       <Header openLoginModal={setLoginModal} openRegisterModal={setRegisterModal} />
       <Router>
         <Nav />

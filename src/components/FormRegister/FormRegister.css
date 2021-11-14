@@ -1,0 +1,50 @@
+.form__list {
+  height: 0px;
+  text-align: left;
+  color: var(--yellow-modal);
+  list-style: initial;
+  padding-left: 1.2em;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: height 0.35s;
+}
+
+.form__list--show {
+  height: 60px;
+  opacity: 1;
+}
+
+.form__condition--error {
+  color: var(--red-modal);
+}
+
+.form__show {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1em;
+  background-color: var(--background-modal);
+}
+
+.form__checkbox {
+  margin: 0 0.5em 0 0;
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.form__checkbox + label {
+  padding-top: 5px;
+}
+
+.form__submit:hover {
+  background-color: var(--blue-modal);
+}
+
+.form__footer a {
+  color: var(--yellow-modal);
+}
+
+.form__footer a:hover {
+  text-decoration: underline;
+}

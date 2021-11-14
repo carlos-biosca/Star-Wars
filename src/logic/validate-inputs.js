@@ -22,7 +22,7 @@ export default function validateInputs (name, value, errors) {
   }
 
   if (name === 'displayname') {
-    if (value.length < 4) {
+    if (value & value.length < 4) {
       error = "Use at least 4 characters."
     }
   }
@@ -39,3 +39,4 @@ export default function validateInputs (name, value, errors) {
 
   return { ...errors, [name]: error }
 }
+
