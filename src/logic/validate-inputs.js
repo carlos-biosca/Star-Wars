@@ -22,9 +22,7 @@ export default function validateInputs (name, value, errors) {
   }
 
   if (name === 'displayname') {
-    if (!value.trim()) {
-      error = "Please enter your display name."
-    } else if (value.length < 4) {
+    if (value.length < 4) {
       error = "Use at least 4 characters."
     }
   }

@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const useValidation = (validateInputs, setIsValid) => {
+const useValidation = (validateInputs, validateForm, setIsValid) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState([]);
+  const [submit, setSubmit] = useState(false)
 
   const handleBlur = e => {
     const { name, value } = e.target;
@@ -15,10 +16,15 @@ const useValidation = (validateInputs, setIsValid) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (Object.values(errors).every(error => error === '')) {
+    setErrors(validateForm(values));
+    setSubmit(true)
+  };
+
+  useEffect(() => {
+    if (Object.values(errors).every(error => error === '') && submit) {
       setIsValid(true)
     }
-  };
+  }, [errors, setIsValid, submit])
 
   return { handleBlur, errors, handleSubmit, values }
 };

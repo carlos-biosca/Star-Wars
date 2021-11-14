@@ -11,17 +11,23 @@ import useLocalstorage from '../../hooks/useLocalstorage'
 import useValidation from '../../hooks/useValidation'
 
 import validateInputs from '../../logic/validate-inputs'
+import validateForm from '../../logic/validate-form'
 
 export default function Modal ({ closeModal, openModal, title }) {
   const [users, setUsers] = useLocalstorage('users')
   const [isValid, setIsValid] = useState(false)
   const [selectAria, setSelectAria] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const { handleBlur, errors, handleSubmit, values } = useValidation(validateInputs, setIsValid)
+  const { handleBlur, errors, handleSubmit, values } = useValidation(validateInputs, validateForm, setIsValid)
 
   useEffect(() => {
     if (isValid) setUsers(users => [...users, values])
   }, [isValid, setUsers, values]);
+
+  const handleChangeModal = () => {
+    closeModal()
+    openModal()
+  }
 
   return (
     <div className="modal">
@@ -79,7 +85,7 @@ export default function Modal ({ closeModal, openModal, title }) {
                 </div>
 
                 <button className="modal__submit" aria-label="create account">Create Account</button>
-                <p className="modal__footer">Already have an account? <a href="#!" onClick={() => { closeModal(false); openModal(true); }}>Sign In</a></p>
+                <p className="modal__footer">Already have an account? <a href="#!" onClick={handleChangeModal}>Sign In</a></p>
               </>
             ) : ''
           }
@@ -89,7 +95,7 @@ export default function Modal ({ closeModal, openModal, title }) {
             ) : ''
           }
         </form>
-        <Button name={"modal__close"} open={() => closeModal(false)} text={<ion-icon name="close-outline"></ion-icon>} />
+        <Button name={"modal__close"} open={closeModal} text={<ion-icon name="close-outline"></ion-icon>} />
       </div>
     </div>
   )
