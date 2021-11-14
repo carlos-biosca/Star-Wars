@@ -1,21 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const useValidation = (validateInputs) => {
-  const [values, setValues] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    displayname: '',
-    password: ''
-  });
-  const [errors, setErrors] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    displayname: '',
-    password: ''
-  });
-  // const [isSubmitting, setIsSubmitting] = useState(false);
+const useValidation = (validateInputs, setIsValid) => {
+  const [values, setValues] = useState({});
+  const [errors, setErrors] = useState([]);
 
   const handleBlur = e => {
     const { name, value } = e.target;
@@ -26,24 +13,14 @@ const useValidation = (validateInputs) => {
     setErrors(validateInputs(name, value, errors));
   };
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-  // };
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (Object.values(errors).every(error => error === '')) {
+      setIsValid(true)
+    }
+  };
 
-  // useEffect(
-  //   () => {
-  //     if (Object.keys(errors).length === 0 && isSubmitting) {
-  //       submitForm();
-  //     }
-  //   },
-  //   [errors]
-  // );
-
-  // return { handleBlur, handleSubmit, values, errors };
-  return {
-    handleBlur, errors
-  }
+  return { handleBlur, errors, handleSubmit, values }
 };
 
 export default useValidation;
