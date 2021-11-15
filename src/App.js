@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import './App.css';
 
@@ -29,7 +29,7 @@ function App () {
       {registerModal && <Modal closeModal={setRegisterModal} openModal={setLoginModal} title={'create your account'} />}
       <Header openLoginModal={setLoginModal} openRegisterModal={setRegisterModal} logged={logged} setLogged={setLogged} />
       <Router>
-        <Nav />
+        <Nav logged={logged} />
         <main>
           <ScrollToTop />
           <Switch>
@@ -37,7 +37,13 @@ function App () {
               <Home />
             </Route>
             <Route exact path="/starships">
-              <Starships />
+              {
+                logged.login ? (
+                  <Starships />
+                ) : (
+                  <Redirect to="/" />
+                )
+              }
             </Route>
             <Route path="/starships/:id">
               <Details />

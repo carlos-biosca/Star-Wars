@@ -7,6 +7,7 @@
 }
 
 .nav__links {
+  position: relative;
   display: flex;
   justify-content: center;
   border-top: 1px solid var(--border-color);
@@ -51,4 +52,19 @@
 
 .nav__link a:hover {
   color: var(--white);
+}
+
+.nav__message {
+  position: absolute;
+  bottom: -45px;
+  opacity: 0;
+  color: var(--red-modal);
+}
+
+.disabled a:hover {
+  color: var(--grey-color);
+}
+
+.disabled:hover + .nav__message {
+  opacity: 1;
 }

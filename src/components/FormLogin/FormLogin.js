@@ -9,8 +9,8 @@ export default function FormLogin ({ openModal, closeModal, users, setLogged, se
     e.preventDefault()
     const { name, password } = e.target
     for (let user of users) {
-      if ((name.value === user.displayname || name === user.email) && password.value === user.password) {
-        setLogged({ display: name.value, login: true })
+      if ((name.value === user.displayname || name.value === user.email) && password.value === user.password) {
+        setLogged({ display: user.displayname, login: true })
         closeModal(false)
         return
       }
@@ -22,7 +22,7 @@ export default function FormLogin ({ openModal, closeModal, users, setLogged, se
     <form className="modal__form" onSubmit={(e) => handleSubmit(e)}>
       <Input type={'text'} id={'name'} text={'Username or Email Address'} />
       <Input type={'password'} id={'password'} text={"Password"} />
-      <button className="form__submit" aria-label='Sign in'>'Sign in'</button>
+      <button className="form__submit" aria-label='Sign in'>Sign in</button>
       <div className="form__help">
         <a href="#!">Need help signing in?</a>
       </div>
