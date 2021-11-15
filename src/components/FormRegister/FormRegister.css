@@ -37,10 +37,6 @@
   padding-top: 5px;
 }
 
-.form__submit:hover {
-  background-color: var(--blue-modal);
-}
-
 .form__footer a {
   color: var(--yellow-modal);
 }

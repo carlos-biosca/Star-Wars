@@ -15,7 +15,7 @@ export default function SearchForm ({ openLoginModal, openRegisterModal, logged,
             <Button open={() => openLoginModal(true)} text={'LOG IN'} name={'login__button'} />
             {/* eslint-disable-next-line react/jsx-no-comment-textnodes*/}
             <span>//</span>
-            <Button open={() => openRegisterModal(true)} text={'SIGN UP'} name={'signup__button'} />
+            <Button open={() => openRegisterModal(true)} text={'SIGN UP'} name={'login__button'} />
           </div>
         ) : (
           <div className="login__status">
@@ -23,7 +23,7 @@ export default function SearchForm ({ openLoginModal, openRegisterModal, logged,
               <span><ion-icon name="person-circle-outline"></ion-icon></span>
               <span>{logged.display}</span>
             </div>
-            <Button open={() => setLogged({ display: '', login: false })} text={'LOG OUT'} name={'logout__button'} />
+            <Button open={() => setLogged({ display: '', login: false })} text={'LOG OUT'} name={'login__button'} />
           </div>
         )
       }

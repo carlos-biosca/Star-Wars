@@ -43,9 +43,7 @@
   font-weight: bold;
 }
 
-.login__button,
-.signup__button,
-.logout__button {
+.login__button {
   background-color: #000;
   color: var(--grey-color);
   font-size: 0.9rem;
@@ -56,8 +54,7 @@
 }
 
 .login__button:hover,
-.signup__button:hover,
-.logout__button:hover {
+.login__button:focus {
   color: var(--white);
 }
 

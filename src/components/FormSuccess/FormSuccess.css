@@ -10,10 +10,12 @@
 }
 
 .success__logo {
-  width: 50%;
+  width: 270px;
+  height: 270px;
 }
 
 .success__title {
+  margin-top: 0.2 em;
   color: var(--white);
   text-align: center;
   font-size: 3.5rem;
