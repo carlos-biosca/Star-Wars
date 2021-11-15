@@ -20,7 +20,7 @@ function App () {
   const [registerModal, setRegisterModal] = useState(false)
   const [logged, setLogged] = useState({
     display: '',
-    login: false
+    login: true
   })
 
   return (

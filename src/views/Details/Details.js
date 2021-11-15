@@ -2,18 +2,32 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 
 import './Details.css'
+import { pilotsList, filmsList } from '../../data'
 import defaultImage from '../../assets/images/default.jpg'
 
 import getData from '../../utils/getData'
+import retrieveList from '../../logic/retrieve-list'
+import DetailsList from '../../components/DetailsList/DetailsList'
 
 
 export default function Details () {
   const { id } = useParams()
   const [starship, setStarship] = useState(null)
+  const [pilots, setPilots] = useState(null)
+  const [films, setFilms] = useState(null)
   const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
 
   useEffect(() => {
-    const getStarship = async () => setStarship(await getData(`https://swapi.dev/api/starships/${id}/`))
+    const getStarship = async () => {
+
+      const dataStarship = await getData(`https://swapi.dev/api/starships/${id}/`)
+      const dataPilots = await retrieveList(dataStarship.pilots)
+      const dataFilms = await retrieveList(dataStarship.films)
+
+      setStarship(dataStarship)
+      setPilots(dataPilots)
+      setFilms(dataFilms)
+    }
     getStarship()
   }, [id])
 
@@ -43,6 +57,16 @@ export default function Details () {
               </div>
             </div>
           </div>
+        )
+      }
+      {
+        pilots && (
+          <DetailsList list={pilots} names={pilotsList} id={'pilots'} />
+        )
+      }
+      {
+        films && (
+          <DetailsList list={films} names={filmsList} id={'films'} />
         )
       }
     </>

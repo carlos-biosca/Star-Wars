@@ -32,4 +32,8 @@ const SliderData = [
   }
 ]
 
-export { SliderData }
+const pilotsList = ['name', 'height', 'mass', 'hair_color', 'eye_color', 'birth_year', 'gender']
+
+const filmsList = ['title', 'episode', 'director', 'producer', 'release_date']
+
+export { SliderData, pilotsList, filmsList }
