@@ -15,8 +15,8 @@
   position: relative;
   max-width: 540px;
   width: 100%;
-  padding-bottom: 40px;
   background-color: var(--background-modal);
+  transition: all 0.35s ease;
 }
 
 .modal__logo {
@@ -36,6 +36,7 @@
   flex-direction: column;
   width: 85%;
   margin: 0 auto;
+  padding-bottom: 40px;
   color: var(--grey-color);
 }
 

@@ -12,7 +12,7 @@ import FormLogin from '../FormLogin/FormLogin'
 import FormRegister from '../FormRegister/FormRegister'
 import FormSuccess from '../FormSuccess/FormSuccess'
 
-export default function Modal ({ closeModal, openModal, title }) {
+export default function Modal ({ closeModal, openModal, title, setLogged }) {
   const [users, setUsers] = useLocalstorage('users')
   const [success, setSuccess] = useState(false)
 
@@ -23,10 +23,11 @@ export default function Modal ({ closeModal, openModal, title }) {
           !success ? (
             <>
               <img src={ModalLogo} alt="" className="modal__logo" />
+              <p className="modal__invalid"></p>
               <h2 className="modal__title">{title}</h2>
               {
                 title === 'sign in' &&
-                <FormLogin openModal={openModal} closeModal={closeModal} />
+                <FormLogin openModal={openModal} closeModal={closeModal} users={users} setLogged={setLogged} />
               }
               {
                 title === 'create your account' &&

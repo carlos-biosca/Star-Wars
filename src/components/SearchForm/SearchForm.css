@@ -1,8 +1,8 @@
-.form {
+.search__form {
   display: flex;
 }
 
-.form__input {
+.search__input {
   width: 200px;
   height: 40px;
   padding: 0 0 0 1em;
@@ -14,22 +14,22 @@
   color: var(--white);
 }
 
-.form__input:focus {
+.search__input:focus {
   filter: brightness(120%);
 }
 
-.form__button {
+.search__button {
   height: 40px;
   background-color: var(--grey-dark);
   border-radius: 0px 5px 5px 0px;
 }
 
-.form__button ion-icon {
+.search__button ion-icon {
   color: var(--grey-color);
   font-size: 26px;
 }
 
-.form__input:focus + .form__button {
+.search__input:focus + .search__button {
   filter: brightness(120%);
 }
 
@@ -43,17 +43,41 @@
 }
 
 .login__button,
-.signup__button {
+.signup__button,
+.logout__button {
   background-color: #000;
   color: var(--grey-color);
-  font-size: inherit;
-  font-weight: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
   border: none;
   cursor: pointer;
   transition: color 0.8s ease;
 }
 
 .login__button:hover,
-.signup__button:hover {
+.signup__button:hover,
+.logout__button:hover {
   color: var(--white);
+}
+
+.login__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0.2em;
+}
+
+.login__user {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.login__user ion-icon {
+  font-size: 30px;
+}
+
+.login__user span {
+  padding-top: 2px;
+  padding-left: 5px;
 }
