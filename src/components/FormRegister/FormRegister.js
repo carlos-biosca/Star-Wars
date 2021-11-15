@@ -23,7 +23,7 @@ export default function FormRegister ({ openModal, closeModal, setUsers, setSucc
   }, [isValid, setUsers, values, setSuccess]);
 
   return (
-    <form className="modal__form" onSubmit={handleSubmit} onClick={(e) => e.target.id !== 'password' && setSelectAria(false)}>
+    <form className="modal__form" onSubmit={handleSubmit}>
       <Input type={'text'} id={'firstname'} text={'First Name'} validation={handleBlur} error={errors.firstname} />
       <Input type={'text'} id={'lastname'} text={'Last Name'} validation={handleBlur} error={errors.lastname} />
       <Input type={'email'} id={'email'} text={'Email Address'} validation={handleBlur} error={errors.email} />
@@ -37,8 +37,8 @@ export default function FormRegister ({ openModal, closeModal, setUsers, setSucc
           maxLength="60"
           className={!errors.password ? "input input--expand" : 'input input--expand input--error'}
           placeholder="Password"
-          onSelect={() => setSelectAria(true)}
-          onBlur={handleBlur}
+          onClick={() => setSelectAria(true)}
+          onBlur={(e) => { handleBlur(e); setSelectAria(false) }}
           onKeyUp={handleBlur}
         />
         <p className="input__errors">{errors.password}</p>

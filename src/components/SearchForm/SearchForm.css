@@ -1,5 +1,6 @@
 .search__form {
   display: flex;
+  justify-content: flex-end;
 }
 
 .search__input {
@@ -35,7 +36,7 @@
 
 .button-group {
   width: fit-content;
-  margin-top: 0.8em;
+  margin-top: 1.5em;
   margin-left: auto;
   color: var(--grey-dark);
   font-size: 0.9rem;
@@ -64,20 +65,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 0.2em;
+  padding: 0.8em 0.2em;
 }
 
 .login__user {
+  width: 150px;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
 }
 
 .login__user ion-icon {
+  padding-top: 5px;
   font-size: 30px;
 }
 
-.login__user span {
+.login__user span:nth-child(2) {
   padding-top: 2px;
   padding-left: 5px;
+  text-align: left;
+  overflow-x: hidden;
 }

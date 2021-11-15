@@ -15,6 +15,7 @@ import FormSuccess from '../FormSuccess/FormSuccess'
 export default function Modal ({ closeModal, openModal, title, setLogged }) {
   const [users, setUsers] = useLocalstorage('users')
   const [success, setSuccess] = useState(false)
+  const [invalid, setInvalid] = useState(false)
 
   return (
     <div className="modal">
@@ -23,11 +24,14 @@ export default function Modal ({ closeModal, openModal, title, setLogged }) {
           !success ? (
             <>
               <img src={ModalLogo} alt="" className="modal__logo" />
-              <p className="modal__invalid"></p>
+              {
+                invalid && <p className="modal__invalid">The credentials you entered are incorrect.
+                  Reminder: passwords are case sensitive.</p>
+              }
               <h2 className="modal__title">{title}</h2>
               {
                 title === 'sign in' &&
-                <FormLogin openModal={openModal} closeModal={closeModal} users={users} setLogged={setLogged} />
+                <FormLogin openModal={openModal} closeModal={closeModal} users={users} setLogged={setLogged} setInvalid={setInvalid} />
               }
               {
                 title === 'create your account' &&

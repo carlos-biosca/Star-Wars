@@ -3,15 +3,19 @@ import './FormLogin.css'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 
-export default function FormLogin ({ openModal, closeModal, users, setLogged }) {
+export default function FormLogin ({ openModal, closeModal, users, setLogged, setInvalid }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const { name, password } = e.target
     for (let user of users) {
-      if ((name.value === user.displayname || name === user.email) && password.value === user.password)
-        setLogged(true)
+      if ((name.value === user.displayname || name === user.email) && password.value === user.password) {
+        setLogged({ display: name.value, login: true })
+        closeModal(false)
+        return
+      }
     }
+    setInvalid(true)
   }
 
   return (

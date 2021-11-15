@@ -23,6 +23,19 @@
   margin: 30px 0 10px;
 }
 
+.modal__invalid,
+.modal__form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+.modal__invalid {
+  padding: 1em 3em;
+  color: var(--red-modal);
+  border: 1px solid var(--red-modal);
+}
+
 .modal__title {
   margin: 0 0 12px;
   color: var(--yellow-modal);
@@ -34,8 +47,6 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  width: 85%;
-  margin: 0 auto;
   padding-bottom: 40px;
   color: var(--grey-color);
 }
