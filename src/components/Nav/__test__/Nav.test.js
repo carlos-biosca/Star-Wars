@@ -2,10 +2,14 @@ import { render, screen, within } from '@testing-library/react'
 import { BrowserRouter as Router } from "react-router-dom";
 import Nav from '../Nav'
 
+const logged = {
+  login: true
+}
+
 const MockNav = () => {
   return (
     <Router>
-      <Nav />
+      <Nav logged={logged} />
     </Router>
   )
 }

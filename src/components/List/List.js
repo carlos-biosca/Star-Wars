@@ -4,7 +4,7 @@ import './List.css'
 
 export default function List ({ starships }) {
   return (
-    <ul aria-label="starships list" className="list">
+    <ul className="list" aria-label="starships list">
       {
         starships && (
           starships.map((starship, index) => {

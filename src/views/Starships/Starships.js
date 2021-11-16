@@ -9,7 +9,7 @@ import retrieveStarships from '../../logic/retrieve-starships';
 import getData from '../../utils/getData';
 
 export default function Starships () {
-  const [starshipList, setStarshipsList] = useState(null)
+  const [starshipList, setStarshipsList] = useState([])
   const [page, setPage] = useState()
 
   useEffect(() => {

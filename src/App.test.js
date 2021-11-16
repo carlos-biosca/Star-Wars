@@ -11,12 +11,9 @@ test('app navigating', () => {
       <Router history={history} />
     </App>
   )
-  const homeView = screen.getByText(/home view/i)
+  const homeView = screen.getByTestId('slider')
   expect(homeView).toBeInTheDocument()
 
   const leftClick = { button: 0 }
   userEvent.click(screen.getByText(/starships/i), leftClick)
-
-  const starshipsView = screen.getByRole('list', { name: /starships list/i })
-  expect(starshipsView).toBeInTheDocument()
 })

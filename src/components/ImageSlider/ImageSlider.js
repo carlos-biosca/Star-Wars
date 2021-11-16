@@ -46,7 +46,7 @@ export default function ImageSlider () {
   }, [current])
 
   return (
-    <section className="slider" id='slider'>
+    <section className="slider" id='slider' data-testid='slider'>
       <Button name={"slider__button slider__button--left"} open={prevSlide} text={<ion-icon name="chevron-back-outline"></ion-icon>} />
       <Button name={"slider__button slider__button--right"} open={nextSlide} text={<ion-icon name="chevron-forward-outline"></ion-icon>} />
       <ul className="slider__container">
