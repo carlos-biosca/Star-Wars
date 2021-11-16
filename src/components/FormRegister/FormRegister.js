@@ -9,7 +9,7 @@ import useValidation from '../../hooks/useValidation'
 import validateInputs from '../../logic/validate-inputs'
 import validateForm from '../../logic/validate-form'
 
-export default function FormRegister ({ openModal, closeModal, setUsers, setSuccess }) {
+export default function FormRegister ({ openModal, closeModal, setUsers, setSuccessRegister }) {
   const [selectAria, setSelectAria] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [isValid, setIsValid] = useState(false)
@@ -18,9 +18,9 @@ export default function FormRegister ({ openModal, closeModal, setUsers, setSucc
   useEffect(() => {
     if (isValid) {
       setUsers(users => [...users, values])
-      setSuccess(success => !success)
+      setSuccessRegister(true)
     }
-  }, [isValid, setUsers, values, setSuccess]);
+  }, [isValid, setUsers, values, setSuccessRegister]);
 
   return (
     <form className="modal__form" onSubmit={handleSubmit}>

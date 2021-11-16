@@ -14,19 +14,20 @@ import FormSuccess from '../FormSuccess/FormSuccess'
 
 export default function Modal ({ closeModal, openModal, title, setLogged }) {
   const [users, setUsers] = useLocalstorage('users')
-  const [success, setSuccess] = useState(false)
+  const [successRegister, setSuccessRegister] = useState(false)
   const [invalid, setInvalid] = useState(false)
 
   return (
     <div className="modal">
       <div className="modal__container">
         {
-          !success ? (
+          successRegister ? (
+            title === 'create your account' && <FormSuccess text={'Registration Completed'} />
+          ) : (
             <>
               <img src={ModalLogo} alt="" className="modal__logo" />
               {
-                invalid && <p className="modal__invalid">The credentials you entered are incorrect.
-                  Reminder: passwords are case sensitive.</p>
+                invalid && <p className="modal__invalid">The credentials you entered are incorrect.Reminder: passwords are case sensitive.</p>
               }
               <h2 className="modal__title">{title}</h2>
               {
@@ -35,11 +36,9 @@ export default function Modal ({ closeModal, openModal, title, setLogged }) {
               }
               {
                 title === 'create your account' &&
-                <FormRegister openModal={openModal} closeModal={closeModal} setUsers={setUsers} setSuccess={setSuccess} />
+                <FormRegister openModal={openModal} closeModal={closeModal} setUsers={setUsers} setSuccessRegister={setSuccessRegister} />
               }
             </>
-          ) : (
-            title === 'sign in' ? <FormSuccess text={'Welcome!'} /> : <FormSuccess text={'Registration Completed'} />
           )
         }
         <Button name={"modal__close"} open={() => closeModal(false)} text={<ion-icon name="close-outline"></ion-icon>} />
