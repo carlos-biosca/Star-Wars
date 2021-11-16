@@ -9,7 +9,7 @@ import retrieveStarships from '../../logic/retrieve-starships';
 import getData from '../../utils/getData';
 
 export default function Starships () {
-  const [starshipList, setStarshipsList] = useState()
+  const [starshipList, setStarshipsList] = useState(null)
   const [page, setPage] = useState()
 
   useEffect(() => {
@@ -29,13 +29,24 @@ export default function Starships () {
     }
   }
 
+  const handleScrollTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       {
         starshipList && (
           <>
             <List starships={starshipList} />
-            <Button open={handleAddNaus} text={'VIEW MORE'} name={'view__button'} />
+            {
+              starshipList.length < 36 ? (
+                <Button open={handleAddNaus} text={'VIEW MORE'} name={'view__button'} />
+              ) : (
+                <Button open={handleScrollTop} text={'BACK TO TOP'} name={'view__button'} />
+              )
+            }
+
           </>
         )
       }

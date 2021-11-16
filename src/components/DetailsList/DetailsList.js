@@ -15,8 +15,7 @@ export default function DetailsList ({ list, names, id }) {
                   else {
                     return (
                       <p key={index} className={`${id}__${name}`}>
-                        {formatListNames(name)}:
-                        {item[name]}
+                        {formatListNames(name)}: {item[name]}
                       </p>
                     )
                   }

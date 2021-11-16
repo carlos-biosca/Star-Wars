@@ -1,6 +1,6 @@
 .section__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   width: 60%;
   margin: 0 auto 3em;
@@ -10,8 +10,7 @@
 .section__item {
   width: 300px;
   background-color: var(--grey-dark);
-  margin-bottom: 2em;
-
+  margin: 0 1em 2em;
   color: var(--white);
   text-align: left;
 }
@@ -38,7 +37,7 @@
   height: 126px;
   padding: 2em 0.5em;
   background-color: var(--black);
-  color: var(--white);
+  color: var(--gold-color);
   font-size: 1.5rem;
   text-align: center;
   border-top: 1px solid var(--gold-color);

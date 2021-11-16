@@ -48,4 +48,5 @@
 
 .legal__link:hover a {
   color: var(--white);
+  text-decoration: underline;
 }

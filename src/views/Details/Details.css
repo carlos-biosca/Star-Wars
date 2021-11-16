@@ -50,3 +50,11 @@
 .section__header {
   font-size: 2rem;
 }
+
+.section__empty {
+  width: 60%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: var(--black);
+}

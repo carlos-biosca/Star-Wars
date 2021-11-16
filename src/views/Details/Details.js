@@ -63,23 +63,23 @@ export default function Details () {
       </div>
 
       <div className="section">
-        <h3 className="section__header">PILOTS</h3>
         {
-          pilots && pilots.length > 0 ? (
-            <DetailsList list={pilots} names={pilotsList} id={'section'} />
-          ) : (
-            <p>NIL</p>
+          pilots && pilots.length > 0 && (
+            <>
+              <h3 className="section__header">PILOTS</h3>
+              <DetailsList list={pilots} names={pilotsList} id={'section'} />
+            </>
           )
         }
       </div>
 
       <div className="section">
-        <h3 className="section__header">FILMS</h3>
         {
-          films && films.length > 0 ? (
-            <DetailsList list={films} names={filmsList} id={'section'} />
-          ) : (
-            <p>NIL</p>
+          films && films.length > 0 && (
+            <>
+              <h3 className="section__header">FILMS</h3>
+              <DetailsList list={films} names={filmsList} id={'section'} />
+            </>
           )
         }
       </div>

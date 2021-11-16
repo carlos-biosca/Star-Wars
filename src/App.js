@@ -20,7 +20,7 @@ function App () {
   const [registerModal, setRegisterModal] = useState(false)
   const [logged, setLogged] = useState({
     display: '',
-    login: true
+    login: false
   })
 
   return (
@@ -46,7 +46,13 @@ function App () {
               }
             </Route>
             <Route path="/starships/:id">
-              <Details />
+              {
+                logged.login ? (
+                  <Details />
+                ) : (
+                  <Redirect to="/" />
+                )
+              }
             </Route>
           </Switch>
         </main>
