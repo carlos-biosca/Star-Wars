@@ -1,0 +1,73 @@
+.cards {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.card {
+  width: 230px;
+  height: 395px;
+}
+
+.card__image {
+  height: 230px;
+}
+
+.card__image img {
+  max-width: 100%;
+}
+
+.card__content {
+  position: relative;
+  padding: 36px 20px 20px;
+  background-color: var(--black-card);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.75) 0%,
+    #1a1a1a 95%
+  );
+}
+
+.card__decal {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 12px;
+  height: 8px;
+}
+
+.card__decal::before {
+  content: "";
+  position: absolute;
+  border-radius: 0 0 2px 2px;
+  background: black;
+  height: 100%;
+  width: 4px;
+}
+
+.card__decal::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  border-radius: 0 0 2px 2px;
+  background: black;
+  height: 100%;
+  width: 4px;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+/* .card__gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.75) 0%,
+    #1a1a1a 95%
+  );
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+} */
