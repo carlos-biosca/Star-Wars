@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 
-import './Details.css'
+import './DetailsStarship.css'
 import { pilotsList, filmsList } from '../../data'
 import defaultImage from '../../assets/images/default.jpg'
 
@@ -67,7 +67,7 @@ export default function Details () {
           pilots && pilots.length > 0 && (
             <>
               <h3 className="section__header">PILOTS</h3>
-              <DetailsList list={pilots} names={pilotsList} id={'section'} />
+              <DetailsList list={pilots} names={pilotsList} id={'actors'} />
             </>
           )
         }
@@ -78,7 +78,7 @@ export default function Details () {
           films && films.length > 0 && (
             <>
               <h3 className="section__header">FILMS</h3>
-              <DetailsList list={films} names={filmsList} id={'section'} />
+              <DetailsList list={films} names={filmsList} />
             </>
           )
         }

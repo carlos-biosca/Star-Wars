@@ -36,4 +36,6 @@ const pilotsList = ['name', 'height', 'mass', 'hair_color', 'eye_color', 'birth_
 
 const filmsList = ['title', 'episode_id', 'director', 'producer', 'release_date']
 
-export { SliderData, pilotsList, filmsList }
+const starshipsList = ['name', 'model', 'manufacturer', 'cost_in_credits', 'length', 'max_atmosphering_speed', 'crew']
+
+export { SliderData, pilotsList, filmsList, starshipsList }

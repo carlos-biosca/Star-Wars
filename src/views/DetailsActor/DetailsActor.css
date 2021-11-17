@@ -1,0 +1,27 @@
+.actor {
+  /* padding: 0.1em 2em; */
+  color: var(--grey-color);
+}
+
+.actor h3 {
+  margin-bottom: 0;
+  padding: 0.1em 1em 1em;
+  color: var(--white);
+  background-color: transparent;
+  border-bottom: 1px solid var(--gold-color);
+  font-size: 2rem;
+}
+
+.actor__details {
+  display: flex;
+  padding: 1em 2em;
+  background-color: var(--grey-dark);
+}
+
+.actor__details div {
+  flex: 1;
+}
+
+.actor__detail {
+  font-size: 1.3rem;
+}

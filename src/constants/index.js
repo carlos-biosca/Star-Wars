@@ -1,3 +1,4 @@
-const initialUrl = 'https://swapi.dev/api/starships/'
+const initialStarshipsUrl = 'https://swapi.dev/api/starships/'
+const initialActorsUrl = "https://swapi.dev/api/people/"
 
-export { initialUrl }
+export { initialStarshipsUrl, initialActorsUrl }

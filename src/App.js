@@ -10,7 +10,9 @@ import Modal from "./components/Modal/Modal";
 
 import Home from './views/Home/Home';
 import Starships from './views/Starships/Starships'
-import Details from "./views/Details/Details";
+import DetailsStarship from "./views/DetailsStarship/DetailsStarship";
+import Actors from "./views/Actors/Actors";
+import DetailsActor from "./views/DetailsActor/DetailsActor";
 
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -20,7 +22,7 @@ function App () {
   const [registerModal, setRegisterModal] = useState(false)
   const [logged, setLogged] = useState({
     display: '',
-    login: false
+    login: true
   })
 
   return (
@@ -48,11 +50,17 @@ function App () {
             <Route path="/starships/:id">
               {
                 logged.login ? (
-                  <Details />
+                  <DetailsStarship />
                 ) : (
                   <Redirect to="/" />
                 )
               }
+            </Route>
+            <Route exact path="/actors">
+              <Actors />
+            </Route>
+            <Route path="/actors/:id">
+              <DetailsActor />
             </Route>
           </Switch>
         </main>

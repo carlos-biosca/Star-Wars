@@ -27,7 +27,8 @@ export default function Modal ({ closeModal, openModal, title, setLogged }) {
             <>
               <img src={ModalLogo} alt="" className="modal__logo" />
               {
-                invalid && <p className="modal__invalid">The credentials you entered are incorrect.Reminder: passwords are case sensitive.</p>
+                invalid && <p className="modal__invalid">The credentials you entered are incorrect.
+                  Reminder: passwords are case sensitive.</p>
               }
               <h2 className="modal__title">{title}</h2>
               {

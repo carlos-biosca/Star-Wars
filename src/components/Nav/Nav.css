@@ -45,6 +45,10 @@
   color: #3273c5;
 }
 
+.nav__link-bar--red {
+  color: #ff0000;
+}
+
 .nav__link a.active + .nav__link-bar {
   opacity: 1;
   transition: opacity 0.5s linear;

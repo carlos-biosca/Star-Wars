@@ -14,6 +14,10 @@ export default function Nav ({ logged }) {
           <span className="nav__link-bar nav__link-bar--blue"></span>
         </li>
         <p className="nav__message">Only avalaible for registered users</p>
+        <li className="nav__link">
+          <NavLink exact to="/actors">ACTORS</NavLink>
+          <span className="nav__link-bar nav__link-bar--red"></span>
+        </li>
       </ul>
     </nav>
   )
