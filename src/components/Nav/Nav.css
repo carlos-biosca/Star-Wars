@@ -59,10 +59,13 @@
 }
 
 .nav__message {
+  width: 100%;
   position: absolute;
-  bottom: -45px;
+  bottom: -53px;
+  padding: 0.5em 0;
   opacity: 0;
   color: var(--red-modal);
+  background-color: var(--black);
 }
 
 .disabled a:hover {
