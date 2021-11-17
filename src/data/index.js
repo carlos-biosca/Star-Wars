@@ -28,7 +28,7 @@ const SliderData = [
     theme: 'dark',
     color: 'gold',
     button: 'read now',
-    link: '#!'
+    link: '/actors'
   }
 ]
 

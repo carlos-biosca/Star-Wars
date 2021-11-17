@@ -1,15 +1,15 @@
 .actor {
-  /* padding: 0.1em 2em; */
   color: var(--grey-color);
+  margin-bottom: 10em;
 }
 
 .actor h3 {
   margin-bottom: 0;
-  padding: 0.1em 1em 1em;
+  padding: 0.5em 0.6em;
   color: var(--white);
-  background-color: transparent;
+  background-color: var(--black);
   border-bottom: 1px solid var(--gold-color);
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .actor__details {

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-const getSaved = (key) => {
+const getSaved = (key, initialValue = []) => {
   const savedValue = JSON.parse(localStorage.getItem(key))
   if (savedValue) return savedValue
-  else return []
+  else return initialValue
 }
 
 export default function useLocalstorage (key) {

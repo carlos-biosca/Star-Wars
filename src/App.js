@@ -15,14 +15,15 @@ import Actors from "./views/Actors/Actors";
 import DetailsActor from "./views/DetailsActor/DetailsActor";
 
 import ScrollToTop from "./utils/ScrollToTop";
+import useLocalstorage from "./hooks/useLocalstorage";
 
 
 function App () {
   const [loginModal, setLoginModal] = useState(false)
   const [registerModal, setRegisterModal] = useState(false)
-  const [logged, setLogged] = useState({
+  const [logged, setLogged] = useLocalstorage('login', {
     display: '',
-    login: true
+    login: false
   })
 
   return (
@@ -57,10 +58,22 @@ function App () {
               }
             </Route>
             <Route exact path="/actors">
-              <Actors />
+              {
+                logged.login ? (
+                  <Actors />
+                ) : (
+                  <Redirect to="/" />
+                )
+              }
             </Route>
             <Route path="/actors/:id">
-              <DetailsActor />
+              {
+                logged.login ? (
+                  <DetailsActor />
+                ) : (
+                  <Redirect to="/" />
+                )
+              }
             </Route>
           </Switch>
         </main>

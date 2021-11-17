@@ -11,7 +11,7 @@
   width: 300px;
   background-color: var(--grey-dark);
   margin: 0 1em 2em;
-  color: var(--white);
+  color: var(--grey-color);
   text-align: left;
 }
 
@@ -29,12 +29,12 @@
 }
 
 .section__item p:last-child {
-  margin-bottom: 2em;
+  padding-bottom: 1.5em;
 }
 
 .section__name,
 .section__title {
-  height: 126px;
+  max-height: 114px;
   padding: 2em 0.5em;
   background-color: var(--black);
   color: var(--gold-color);
@@ -42,4 +42,9 @@
   text-align: center;
   border-top: 1px solid var(--gold-color);
   border-bottom: 1px solid var(--gold-color);
+}
+
+.section__name:hover,
+.section__title:hover {
+  text-decoration: underline;
 }

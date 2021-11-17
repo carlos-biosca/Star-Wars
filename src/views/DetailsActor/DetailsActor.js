@@ -56,7 +56,7 @@ export default function DetailsActors () {
         {
           starships && starships.length > 0 && (
             <>
-              <h3 className="section__header">Starships</h3>
+              <h3 className="section__header">STARSHIPS</h3>
               <DetailsList list={starships} names={starshipsList} id={'starships'} />
             </>
           )
