@@ -18,6 +18,8 @@
   --brown-color: #403321;
 
   --black-card: #1a1a1a;
+  --grey-card: #5d645e;
+  --sea-color: #1f4055;
 }
 
 * {
@@ -45,9 +47,4 @@ body {
 a {
   color: var(--grey-color);
   text-decoration: none;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

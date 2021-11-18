@@ -1,24 +1,37 @@
-import ImageSlider from "../../components/ImageSlider/ImageSlider";
-
-import card1 from '../../assets/images/cards/card1.webp'
+import { Link } from 'react-router-dom';
 
 import './Home.css'
+
+import { cardsData } from '../../data';
+
+import cardsHeader from '../../assets/images/thumb-1920-1110562.jpg'
+
+import Card from "../../components/Card/Card";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
+
 
 export default function Home () {
   return (
     <>
       <ImageSlider />
       <section className="cards">
-        <div className="card">
-          <div className="card__image">
-            <img src={card1} alt="" />
+        <div className="cards__header">
+          <img src={cardsHeader} alt='' />
+          <div className="cards__header-info">
+            <h2>A new era of Star Wars.</h2>
+            <Link to='#!'>Explore</Link>
           </div>
-          <div className="card__content">
-            <div className="card__decal"></div>
-            <h3 className="card__title">INSIDE STAR WARS: VISIONS: MEET THE SHIPS AND VEHICLES</h3>
-            {/* <div className="card__gradient"></div> */}
-          </div>
-          <div className="card__footer"></div>
+        </div>
+        <div className="cards__body">
+          {
+            cardsData.map((card, index) => {
+              return (
+                <Link to={card.link} key={index}>
+                  <Card text={card.text} image={card.image} />
+                </Link>
+              )
+            })
+          }
         </div>
       </section>
     </>

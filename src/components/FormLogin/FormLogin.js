@@ -9,7 +9,7 @@ export default function FormLogin ({ openModal, closeModal, users, setLogged, se
     e.preventDefault()
     const { name, password } = e.target
     for (let user of users) {
-      if ((name.value === user.displayname || name.value === user.email) && password.value === user.password) {
+      if ((name.value.trim() === user.displayname || name.value.trim() === user.email) && password.value.trim() === user.password) {
         setLogged({ display: user.displayname, login: true })
         closeModal(false)
         return

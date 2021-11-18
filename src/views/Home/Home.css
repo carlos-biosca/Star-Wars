@@ -1,73 +1,56 @@
 .cards {
-  width: 60%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 5em auto;
 }
 
-.card {
-  width: 230px;
-  height: 395px;
-}
-
-.card__image {
-  height: 230px;
-}
-
-.card__image img {
+.cards img {
   max-width: 100%;
+  height: 100%;
 }
 
-.card__content {
+.cards__header {
   position: relative;
-  padding: 36px 20px 20px;
-  background-color: var(--black-card);
-  background-image: linear-gradient(
-    to bottom,
-    rgba(26, 26, 26, 0.75) 0%,
-    #1a1a1a 95%
-  );
+  background-color: var(--sea-color);
 }
 
-.card__decal {
+.cards__header-info {
   position: absolute;
-  right: 20px;
-  top: 0;
-  width: 12px;
-  height: 8px;
+  bottom: 15%;
+  left: 50%;
+  width: 40%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-.card__decal::before {
-  content: "";
-  position: absolute;
-  border-radius: 0 0 2px 2px;
-  background: black;
-  height: 100%;
-  width: 4px;
+.cards__header-info h2 {
+  font-size: 3rem;
+  color: var(--black);
 }
 
-.card__decal::after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  border-radius: 0 0 2px 2px;
-  background: black;
-  height: 100%;
-  width: 4px;
+.cards__header-info a {
+  padding: 15px 32px;
+  color: var(--white);
+  background-color: var(--blue-color);
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.card__title {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+.cards__header-info a:hover {
+  background-color: #177afb;
 }
 
-/* .card__gradient {
+.cards__body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 3em;
+  padding-bottom: 1em;
   background: linear-gradient(
     to bottom,
-    rgba(26, 26, 26, 0.75) 0%,
-    #1a1a1a 95%
+    rgb(31, 64, 85) 0%,
+    rgb(94, 108, 136) 100%
   );
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-} */
+}

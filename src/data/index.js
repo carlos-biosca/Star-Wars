@@ -2,6 +2,11 @@ import slider1 from '../assets/images/slider/thumb-1920-107763.jpg'
 import slider2 from '../assets/images/slider/thumb-1920-923364.jpg'
 import slider3 from '../assets/images/slider/thumb-1920-665427.jpg'
 
+import card1 from '../assets/images/cards/card1.webp'
+import card2 from '../assets/images/cards/card2.jpg'
+import card3 from '../assets/images/cards/card3.jpg'
+import card4 from '../assets/images/cards/card4.jpg'
+
 const SliderData = [
   {
     image: slider1,
@@ -38,4 +43,25 @@ const filmsList = ['title', 'episode_id', 'director', 'producer', 'release_date'
 
 const starshipsList = ['name', 'model', 'manufacturer', 'cost_in_credits', 'length', 'max_atmosphering_speed', 'crew']
 
-export { SliderData, pilotsList, filmsList, starshipsList }
+const cardsData = [
+  {
+    image: card1,
+    text: 'Meet the Ships and Vehicles',
+    link: '/starships'
+  },
+  {
+    image: card2,
+    text: 'Meet the Droids',
+    link: '/actors'
+  }, {
+    image: card3,
+    text: 'Meet the Heroes',
+    link: '/actors'
+  }, {
+    image: card4,
+    text: 'Meet the Villains',
+    link: '/actors'
+  }
+]
+
+export { SliderData, pilotsList, filmsList, starshipsList, cardsData }
