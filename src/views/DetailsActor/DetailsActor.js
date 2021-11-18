@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router'
 
 import './DetailsActor.css'
@@ -8,24 +8,34 @@ import getData from '../../utils/getData'
 import retrieveList from '../../logic/retrieve-list'
 import DetailsList from '../../components/DetailsList/DetailsList'
 
+import axios from 'axios'
+
 export default function DetailsActors () {
   const { id } = useParams()
   const [actor, setActor] = useState(null)
   const [starships, setStarships] = useState(null)
   const [films, setFilms] = useState(null)
 
+  const sourceRef = useRef(axios.CancelToken.source())
+
   useEffect(() => {
+    const source = sourceRef.current
     const getActor = async () => {
-
       const dataActor = await getData(`https://swapi.dev/api/people/${id}/`)
-      const dataStarships = await retrieveList(dataActor.starships)
-      const dataFilms = await retrieveList(dataActor.films)
-
       setActor(dataActor)
+      const dataStarships = await retrieveList(dataActor.starships)
       setStarships(dataStarships)
+      const dataFilms = await retrieveList(dataActor.films)
       setFilms(dataFilms)
     }
     getActor()
+
+    return () => {
+      if (source) source.cancel("Landing Component got unmounted");
+      setActor(null)
+      setStarships(null)
+      setFilms(null)
+    }
   }, [id])
 
   return (

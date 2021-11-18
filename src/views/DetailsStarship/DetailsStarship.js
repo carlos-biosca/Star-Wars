@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router'
 
 import './DetailsStarship.css'
@@ -9,6 +9,7 @@ import getData from '../../utils/getData'
 import retrieveList from '../../logic/retrieve-list'
 import DetailsList from '../../components/DetailsList/DetailsList'
 
+import axios from 'axios'
 
 export default function Details () {
   const { id } = useParams()
@@ -17,18 +18,26 @@ export default function Details () {
   const [films, setFilms] = useState(null)
   const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
 
+  const sourceRef = useRef(axios.CancelToken.source())
+
   useEffect(() => {
+    const source = sourceRef.current
     const getStarship = async () => {
-
       const dataStarship = await getData(`https://swapi.dev/api/starships/${id}/`)
-      const dataPilots = await retrieveList(dataStarship.pilots)
-      const dataFilms = await retrieveList(dataStarship.films)
-
       setStarship(dataStarship)
+      const dataPilots = await retrieveList(dataStarship.pilots)
       setPilots(dataPilots)
+      const dataFilms = await retrieveList(dataStarship.films)
       setFilms(dataFilms)
     }
     getStarship()
+
+    return () => {
+      if (source) source.cancel("Landing Component got unmounted");
+      setStarship(null)
+      setPilots(null)
+      setFilms(null)
+    }
   }, [id])
 
   return (

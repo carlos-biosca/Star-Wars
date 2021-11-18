@@ -105,3 +105,25 @@
 .slider__info--gold a:hover {
   background-color: #ddc187;
 }
+
+@media screen and (max-width: 1440px) {
+  .slider__info {
+    width: 20%;
+  }
+
+  .slider__info h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .slider__info {
+    top: 20px;
+    left: 100px;
+  }
+
+  .slider__info h2 {
+    font-size: 1.5rem;
+  }
+}

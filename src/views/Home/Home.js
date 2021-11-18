@@ -16,7 +16,7 @@ export default function Home () {
       <ImageSlider />
       <section className="cards">
         <div className="cards__header">
-          <img src={cardsHeader} alt='' />
+          <img src={cardsHeader} alt='' className="cards__image" />
           <div className="cards__header-info">
             <h2>A new era of Star Wars.</h2>
             <Link to='#!'>Explore</Link>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import './Actors.css'
 
@@ -8,18 +8,28 @@ import Button from '../../components/Button/Button';
 import retrieveActors from '../../logic/retrieve-actors'
 import getData from '../../utils/getData';
 
+import axios from 'axios'
 
 export default function Actors () {
   const [actorsList, setActorsList] = useState([])
   const [page, setPage] = useState()
 
+  const sourceRef = useRef(axios.CancelToken.source())
+
   useEffect(() => {
+    const source = sourceRef.current
     const getActors = async () => {
       const res = await retrieveActors()
       setActorsList(res.results)
       setPage(res.next)
     }
     getActors()
+
+    return () => {
+      if (source) source.cancel("Landing Component got unmounted");
+      setActorsList([])
+      setPage()
+    }
   }, [])
 
   const handleAddActors = async () => {
