@@ -8,6 +8,10 @@ La pantalla de registro permite registrarse a los usuarios mediante **Localstora
 
 También muestra una lista de los actores, con los detalles sobre que naves saben pilotar y las películas en las que aparecen.
 
+## Demo
+
+![star wars clone](./src/assets/gifs/Demo.gif)
+
 ## Instalación
 
 Usar el package manager [npm](https://docs.npmjs.com/) para la instalación.
@@ -31,6 +35,7 @@ Crear una página de STAR WARS usando:
 - [React Router](https://reactrouter.com/web/guides/quick-start)
 - [React testing library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Axios](https://axios-http.com/docs/intro)
+- [Custom Hooks](https://es.reactjs.org/docs/hooks-custom.html)
 
 ## Test
 
