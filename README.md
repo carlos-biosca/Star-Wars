@@ -10,7 +10,7 @@ También muestra una lista de los actores, con los detalles sobre que naves sabe
 
 ## Demo
 
-![star wars clone](./src/assets/gifs/Demo.gif)
+![star wars clone](./src/assets/gifs/DemoProject.gif)
 
 ## Instalación
 
