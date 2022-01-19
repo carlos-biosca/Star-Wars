@@ -1,6 +1,6 @@
 import './SearchForm.css'
-import Button from '../Button/Button'
 
+import Button from '../Button/Button'
 
 export default function SearchForm ({ openLoginModal, openRegisterModal, logged, setLogged }) {
   return (

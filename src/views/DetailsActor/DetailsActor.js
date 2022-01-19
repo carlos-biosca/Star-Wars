@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router'
 
 import './DetailsActor.css'
+
 import { starshipsList, filmsList } from '../../data'
 
 import getData from '../../utils/getData'

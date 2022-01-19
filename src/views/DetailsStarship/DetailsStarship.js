@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router'
 
 import './DetailsStarship.css'
+
 import { pilotsList, filmsList } from '../../data'
 import defaultImage from '../../assets/images/default.jpg'
 
