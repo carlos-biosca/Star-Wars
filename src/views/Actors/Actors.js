@@ -4,6 +4,7 @@ import './Actors.css'
 
 import List from "../../components/List/List"
 import Button from '../../components/Button/Button';
+import LoadingSpinner from '../../components/Spinner/Spinner'
 
 import retrieveActors from '../../logic/retrieve-actors'
 import getData from '../../utils/getData';
@@ -11,7 +12,7 @@ import getData from '../../utils/getData';
 import axios from 'axios'
 
 export default function Actors () {
-  const [actorsList, setActorsList] = useState([])
+  const [actorsList, setActorsList] = useState(null)
   const [page, setPage] = useState()
 
   const sourceRef = useRef(axios.CancelToken.source())
@@ -47,7 +48,7 @@ export default function Actors () {
   return (
     <>
       {
-        actorsList && (
+        actorsList ? (
           <>
             <List list={actorsList} page={'actors'} />
             {
@@ -58,6 +59,8 @@ export default function Actors () {
               )
             }
           </>
+        ) : (
+          <LoadingSpinner />
         )
       }
     </>

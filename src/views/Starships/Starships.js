@@ -4,6 +4,7 @@ import './Starships.css'
 
 import List from "../../components/List/List"
 import Button from '../../components/Button/Button';
+import LoadingSpinner from '../../components/Spinner/Spinner';
 
 import retrieveStarships from '../../logic/retrieve-starships';
 import getData from '../../utils/getData';
@@ -11,7 +12,7 @@ import getData from '../../utils/getData';
 import axios from 'axios'
 
 export default function Starships () {
-  const [starshipList, setStarshipsList] = useState([])
+  const [starshipList, setStarshipsList] = useState(null)
   const [page, setPage] = useState()
   const sourceRef = useRef(axios.CancelToken.source())
 
@@ -46,7 +47,7 @@ export default function Starships () {
   return (
     <>
       {
-        starshipList && (
+        starshipList ? (
           <>
             <List list={starshipList} page={'starships'} />
             {
@@ -56,8 +57,9 @@ export default function Starships () {
                 <Button open={handleScrollTop} text={'BACK TO TOP'} name={'view__button'} />
               )
             }
-
           </>
+        ) : (
+          <LoadingSpinner />
         )
       }
     </>

@@ -11,12 +11,14 @@ import retrieveList from '../../logic/retrieve-list'
 import DetailsList from '../../components/DetailsList/DetailsList'
 
 import axios from 'axios'
+import LoadingSpinner from '../../components/Spinner/Spinner'
 
 export default function Details () {
   const { id } = useParams()
   const [starship, setStarship] = useState(null)
   const [pilots, setPilots] = useState(null)
   const [films, setFilms] = useState(null)
+  const [dataIsLoading, setDataIsLoading] = useState(true)
   const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
 
   const sourceRef = useRef(axios.CancelToken.source())
@@ -30,6 +32,7 @@ export default function Details () {
       setPilots(dataPilots)
       const dataFilms = await retrieveList(dataStarship.films)
       setFilms(dataFilms)
+      setDataIsLoading(false)
     }
     getStarship()
 
@@ -90,6 +93,14 @@ export default function Details () {
               <h3 className="section__header">FILMS</h3>
               <DetailsList list={films} names={filmsList} />
             </>
+          )
+        }
+      </div>
+
+      <div className="section">
+        {
+          dataIsLoading && (
+            <LoadingSpinner />
           )
         }
       </div>

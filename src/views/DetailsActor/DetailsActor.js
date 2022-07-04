@@ -8,6 +8,7 @@ import { starshipsList, filmsList } from '../../data'
 import getData from '../../utils/getData'
 import retrieveList from '../../logic/retrieve-list'
 import DetailsList from '../../components/DetailsList/DetailsList'
+import LoadingSpinner from '../../components/Spinner/Spinner'
 
 import axios from 'axios'
 
@@ -16,6 +17,8 @@ export default function DetailsActors () {
   const [actor, setActor] = useState(null)
   const [starships, setStarships] = useState(null)
   const [films, setFilms] = useState(null)
+  const [dataIsLoading, setDataIsLoading] = useState(true)
+
 
   const sourceRef = useRef(axios.CancelToken.source())
 
@@ -28,6 +31,7 @@ export default function DetailsActors () {
       setStarships(dataStarships)
       const dataFilms = await retrieveList(dataActor.films)
       setFilms(dataFilms)
+      setDataIsLoading(false)
     }
     getActor()
 
@@ -81,6 +85,14 @@ export default function DetailsActors () {
               <h3 className="section__header">FILMS</h3>
               <DetailsList list={films} names={filmsList} />
             </>
+          )
+        }
+      </div>
+
+      <div className="section">
+        {
+          dataIsLoading && (
+            <LoadingSpinner />
           )
         }
       </div>

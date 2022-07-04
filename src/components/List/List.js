@@ -23,8 +23,8 @@ export default function List ({ list, page }) {
         list && page === 'actors' && (
           list.map((actor, index) => {
             return (
-              <Link to={`/actors/${(actor.url).match(/[0-9]+/)}`}>
-                <li key={index} className="list__item list__item--actor">
+              <Link key={index} to={`/actors/${(actor.url).match(/[0-9]+/)}`}>
+                <li className="list__item list__item--actor">
                   <h3>{actor.name}</h3>
                 </li>
               </Link>

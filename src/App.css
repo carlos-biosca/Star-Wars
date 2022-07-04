@@ -16,5 +16,5 @@ main {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: center;
-  background-size: 85% auto;
+  background-size: 85% 100%;
 }
