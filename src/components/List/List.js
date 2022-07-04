@@ -8,23 +8,27 @@ export default function List ({ list, page }) {
       {
         list && page === 'starships' && (
           list.map((starship, index) => {
-            return <li key={index} className="list__item" data-testid={`element-${index}`}>
-              <Link to={`/starships/${(starship.url).match(/[0-9]+/)}`}>
-                <h3>{starship.name}</h3>
-                <p>{starship.model}</p>
+            return (
+              <Link key={index} to={`/starships/${(starship.url).match(/[0-9]+/)}`}>
+                <li className="list__item" data-testid={`element-${index}`}>
+                  <h3>{starship.name}</h3>
+                  <p>{starship.model}</p>
+                </li>
               </Link>
-            </li>
+            )
           })
         )
       }
       {
         list && page === 'actors' && (
           list.map((actor, index) => {
-            return <li key={index} className="list__item list__item--actor">
+            return (
               <Link to={`/actors/${(actor.url).match(/[0-9]+/)}`}>
-                <h3>{actor.name}</h3>
+                <li key={index} className="list__item list__item--actor">
+                  <h3>{actor.name}</h3>
+                </li>
               </Link>
-            </li>
+            )
           })
         )
       }
