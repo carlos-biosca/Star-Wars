@@ -52,9 +52,9 @@ export default function Starships () {
             <List list={starshipList} page={'starships'} />
             {
               starshipList.length < 36 ? (
-                <Button open={handleAddNaus} text={'VIEW MORE'} name={'view__button'} />
+                <Button open={handleAddNaus} text={'VIEW MORE'} name={'view__button'} dataTestId={'view-more-btn'} />
               ) : (
-                <Button open={handleScrollTop} text={'BACK TO TOP'} name={'view__button'} />
+                <Button open={handleScrollTop} text={'BACK TO TOP'} name={'view__button'} dataTestId={'back-to-top-btn'}/>
               )
             }
           </>

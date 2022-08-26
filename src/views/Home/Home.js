@@ -26,7 +26,7 @@ export default function Home () {
           {
             cardsData.map((card, index) => {
               return (
-                <Link to={card.link} key={index}>
+                <Link to={card.link} key={index} data-testid={card.name}>
                   <Card text={card.text} image={card.image} />
                 </Link>
               )

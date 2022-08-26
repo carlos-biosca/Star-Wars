@@ -47,20 +47,24 @@ const cardsData = [
   {
     image: card1,
     text: 'Meet the Ships and Vehicles',
-    link: '/starships'
+    link: '/starships',
+    name: 'link-starships'
   },
   {
     image: card2,
     text: 'Meet the Droids',
-    link: '/actors'
+    link: '/actors',
+    name: 'link-droids'
   }, {
     image: card3,
     text: 'Meet the Heroes',
-    link: '/actors'
+    link: '/actors',
+    name: 'link-heroes'
   }, {
     image: card4,
     text: 'Meet the Villains',
-    link: '/actors'
+    link: '/actors',
+    name: 'link-villains'
   }
 ]
 

@@ -10,7 +10,7 @@ export default function List ({ list, page }) {
           list.map((starship, index) => {
             return (
               <Link key={index} to={`/starships/${(starship.url).match(/[0-9]+/)}`}>
-                <li className="list__item" data-testid={`element-${index}`}>
+                <li className="list__item" data-testid={`${starship.name.toLowerCase()}`}>
                   <h3>{starship.name}</h3>
                   <p>{starship.model}</p>
                 </li>
@@ -24,7 +24,7 @@ export default function List ({ list, page }) {
           list.map((actor, index) => {
             return (
               <Link key={index} to={`/actors/${(actor.url).match(/[0-9]+/)}`}>
-                <li className="list__item list__item--actor">
+                <li className="list__item list__item--actor" data-testid={actor.name}>
                   <h3>{actor.name}</h3>
                 </li>
               </Link>

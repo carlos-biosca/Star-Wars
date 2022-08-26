@@ -20,13 +20,13 @@ export default function FormLogin ({ openModal, closeModal, users, setLogged, se
 
   return (
     <form className="modal__form" onSubmit={(e) => handleSubmit(e)}>
-      <Input type={'text'} id={'name'} text={'Username or Email Address'} />
+      <Input type={'text'} id={'name'} text={'Username'} />
       <Input type={'password'} id={'password'} text={"Password"} />
-      <button className="form__submit" aria-label='Sign in'>Sign in</button>
+      <button className="form__submit" aria-label='Sign in' data-testid={'signin-btn'}>Sign in</button>
       <div className="form__help">
         <a href="#!">Need help signing in?</a>
       </div>
-      <Button name={"form__account"} open={() => { openModal(true); closeModal(false); }} text={'Create an Account'} />
+      <Button name={"form__account"} open={() => { openModal(true); closeModal(false); }} text={'Create an Account'} dataTestId={'create-acc-btn'}/>
     </form>
   )
 }

@@ -42,7 +42,7 @@ export default function Modal ({ closeModal, openModal, title, setLogged }) {
             </>
           )
         }
-        <Button name={"modal__close"} open={() => closeModal(false)} text={<ion-icon name="close-outline"></ion-icon>} />
+        <Button name={"modal__close"} open={() => closeModal(false)} text={<ion-icon name="close-outline"></ion-icon>} dataTestId={'modal-close-btn'}/>
       </div>
     </div>
   )

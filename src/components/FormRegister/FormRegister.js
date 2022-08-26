@@ -40,6 +40,7 @@ export default function FormRegister ({ openModal, closeModal, setUsers, setSucc
           onFocus={() => setSelectAria(true)}
           onBlur={(e) => { handleBlur(e); setSelectAria(false) }}
           onKeyUp={handleBlur}
+          data-testid={'password'}
         />
         <p className="input__errors">{errors.password}</p>
         <ul className={selectAria ? "form__list form__list--show" : "form__list"}>
@@ -53,7 +54,7 @@ export default function FormRegister ({ openModal, closeModal, setUsers, setSucc
         </div>
       </div>
 
-      <button className="form__submit" aria-label="create account">Create Account</button>
+      <button className="form__submit" aria-label="create account" data-testid={'submit-btn'}>Create Account</button>
       <p className="form__footer">Already have an account? <a href="#!" onClick={() => { openModal(true); closeModal(false); }}>Sign In</a></p>
     </form>
   )

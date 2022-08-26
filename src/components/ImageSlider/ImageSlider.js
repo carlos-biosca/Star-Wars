@@ -47,8 +47,8 @@ export default function ImageSlider () {
 
   return (
     <section className="slider" id='slider' data-testid='slider'>
-      <Button name={"slider__button slider__button--left"} open={prevSlide} text={<ion-icon name="chevron-back-outline"></ion-icon>} />
-      <Button name={"slider__button slider__button--right"} open={nextSlide} text={<ion-icon name="chevron-forward-outline"></ion-icon>} />
+      <Button name={"slider__button slider__button--left"} open={prevSlide} text={<ion-icon name="chevron-back-outline"></ion-icon>} dataTestId={'prev-slide-btn'} />
+      <Button name={"slider__button slider__button--right"} open={nextSlide} text={<ion-icon name="chevron-forward-outline"></ion-icon>} dataTestId={'next-slide-btn'}/>
       <ul className="slider__container">
         {
           SliderData.map((slide, index) => {
