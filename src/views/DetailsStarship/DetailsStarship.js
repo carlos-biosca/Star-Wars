@@ -26,7 +26,7 @@ export default function Details () {
   useEffect(() => {
     const source = sourceRef.current
     const getStarship = async () => {
-      const dataStarship = await getData(`https://swapi.dev/api/starships/${id}/`)
+      const dataStarship = await getData(`/api/starships/${id}/`)
       setStarship(dataStarship)
       const dataPilots = await retrieveList(dataStarship.pilots)
       setPilots(dataPilots)
@@ -55,18 +55,17 @@ export default function Details () {
               </div>
               <div className="details__bar"></div>
               <div className="details__info">
-                <h3 >{starship.name}</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis ipsam corrupti itaque! Quidem similique inventore eius nam esse earum voluptate velit molestias officia, fugit possimus omnis recusandae eaque et laborum ducimus beatae officiis pariatur aliquid. Itaque, cupiditate. Voluptas, adipisci ipsam.</p>
+                <h3>{starship.name}</h3>
                 <div className="details__starship">
-                  <div>
-                    <p>Model: {starship.model}</p>
-                    <p>Manufacturer: {starship.manufacturer}</p>
-                    <p>Cost in credits: {starship.cost_in_credits}</p>
+                  <div className='details__section'>
+                    <p className='details__data'><span>Model:</span> {starship.model}</p>
+                    <p className='details__data'><span>Manufacturer:</span> {starship.manufacturer}</p>
+                    <p className='details__data'><span>Cost:</span> {starship.cost_in_credits} credits</p>
                   </div>
                   <div>
-                    <p>Length: {starship.length}</p>
-                    <p>Atmospheric Speed: {starship.max_atmosphering_speed}</p>
-                    <p>Crew: {starship.crew}</p>
+                    <p className='details__data'><span>Length:</span> {starship.length}</p>
+                    <p className='details__data'><span>Atmospheric Speed:</span> {starship.max_atmosphering_speed}</p>
+                    <p className='details__data'><span>Crew:</span> {starship.crew}</p>
                   </div>
                 </div>
               </div>
