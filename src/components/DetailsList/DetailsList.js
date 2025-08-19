@@ -8,7 +8,7 @@ export default function DetailsList ({ list, names, id }) {
       {
         list.map((item, index) => {
           return (
-            <li key={index} className={`section__item`}>
+            <li key={index} className='section__item'>
               {
                 names.map((name, index) => {
                   if (name === 'name' | name === 'title')
@@ -19,8 +19,8 @@ export default function DetailsList ({ list, names, id }) {
                     )
                   else {
                     return (
-                      <p key={index} className={`section__${name}`}>
-                        {formatListNames(name)}: {item[name]}
+                      <p className='section__data' key={index}>
+                        <span>{formatListNames(name)}</span>: {item[name]}
                       </p>
                     )
                   }
