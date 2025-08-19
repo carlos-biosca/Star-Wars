@@ -25,7 +25,7 @@ export default function DetailsActors () {
   useEffect(() => {
     const source = sourceRef.current
     const getActor = async () => {
-      const dataActor = await getData(`https://swapi.dev/api/people/${id}/`)
+      const dataActor = await getData(`/api/people/${id}/`)
       setActor(dataActor)
       const dataStarships = await retrieveList(dataActor.starships)
       setStarships(dataStarships)
@@ -52,14 +52,14 @@ export default function DetailsActors () {
               <h3>{actor.name}</h3>
               <div className="actor__details">
                 <div>
-                  <p className="actor__detail">Height: {actor.height}</p>
-                  <p className="actor__detail">Mass: {actor.mass}</p>
-                  <p className="actor__detail">Hair color: {actor.hair_color}</p>
+                  <p className="actor__detail"><span>Height:</span> {actor.height}</p>
+                  <p className="actor__detail"><span>Mass:</span> {actor.mass}</p>
+                  <p className="actor__detail"><span>Hair color:</span> {actor.hair_color}</p>
                 </div>
                 <div>
-                  <p className="actor__detail">Eye color: {actor.skin_color}</p>
-                  <p className="actor__detail">Birth year: {actor.birth_year}</p>
-                  <p className="actor__detail">Gender: {actor.gender}</p>
+                  <p className="actor__detail"><span>Eye color:</span> {actor.skin_color}</p>
+                  <p className="actor__detail"><span>Birth year:</span> {actor.birth_year}</p>
+                  <p className="actor__detail"><span>Gender:</span> {actor.gender}</p>
                 </div>
               </div>
             </div>

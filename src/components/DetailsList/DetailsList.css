@@ -31,7 +31,7 @@
   margin: 0.8em 1.2em;
 
   & span {
-    color: var(--gold-color);
+    color: var(--white);
     font-weight: 500;
   }
 }

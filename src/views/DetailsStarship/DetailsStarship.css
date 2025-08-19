@@ -46,7 +46,7 @@
 .details__data {
   margin: 1em 0;
   & span {
-    color: var(--gold-color);
+    color: var(--orange-color);
     font-weight: 500;
   }
 }

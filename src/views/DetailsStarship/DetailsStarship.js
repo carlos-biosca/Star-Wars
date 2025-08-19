@@ -19,7 +19,6 @@ export default function Details () {
   const [pilots, setPilots] = useState(null)
   const [films, setFilms] = useState(null)
   const [dataIsLoading, setDataIsLoading] = useState(true)
-  const [imgSrc, setImgSrc] = useState(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
 
   const sourceRef = useRef(axios.CancelToken.source())
 
@@ -51,7 +50,7 @@ export default function Details () {
           starship && (
             <>
               <div className="details__image">
-                <img src={imgSrc ? imgSrc : defaultImage} onError={() => setImgSrc(defaultImage)} alt="" />
+                <img src={defaultImage} alt="starship logo" />
               </div>
               <div className="details__bar"></div>
               <div className="details__info">
