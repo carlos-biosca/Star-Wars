@@ -22,28 +22,33 @@
 }
 
 .details__info {
-  padding: 0 1em 1em;
+  padding: 0 2em 1em;
   background-color: var(--grey-dark);
 }
 
 .details__info h3 {
   margin-top: 0;
+  margin-bottom: 0;
   padding-top: 1em;
   font-size: 2rem;
   color: var(--white);
 }
 
 .details__starship {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.details__starship div {
+.details__section {
   padding-right: 1em;
-  flex: 1;
 }
 
-.details__starship p {
-  margin: 1.5em 0;
+.details__data {
+  margin: 1em 0;
+  & span {
+    color: var(--orange-color);
+    font-weight: 500;
+  }
 }
 
 .section__header {

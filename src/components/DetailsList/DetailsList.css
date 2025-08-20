@@ -15,11 +15,6 @@
   text-align: left;
 }
 
-.section__item p {
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
 .section__item p:nth-child(1) {
   margin: 0;
 }
@@ -32,6 +27,15 @@
   padding-bottom: 1.5em;
 }
 
+.section__data {
+  margin: 0.8em 1.2em;
+
+  & span {
+    color: var(--white);
+    font-weight: 500;
+  }
+}
+
 .section__name,
 .section__title {
   max-height: 114px;
@@ -42,9 +46,10 @@
   text-align: center;
   border-top: 1px solid var(--gold-color);
   border-bottom: 1px solid var(--gold-color);
+  cursor: auto;
 }
 
-.section__name:hover,
-.section__title:hover {
+.section__name:hover {
   text-decoration: underline;
+  cursor: pointer;
 }

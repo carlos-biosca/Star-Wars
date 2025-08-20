@@ -7,7 +7,7 @@
   margin-bottom: 0;
   padding: 0.5em 0.6em;
   color: var(--white);
-  background-color: var(--black);
+  background-color: transparent;
   border-bottom: 1px solid var(--gold-color);
   font-size: 3rem;
 }
@@ -24,4 +24,11 @@
 
 .actor__detail {
   font-size: 1.3rem;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+
+  & span {
+    color: var(--orange-color);
+    font-weight: 500;
+  }
 }
